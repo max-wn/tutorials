@@ -1,0 +1,29 @@
+# ===========================================================================
+# INSTRUCTIONS FOR MOC
+# ===========================================================================
+#  Maintainer: WILLENBROCK                                                       
+# Last change: 23.05.2020                           
+# To use config and keymap files, copy them to                                                         
+#   for Linux: ~/.moc/config
+#              ~/.moc/keymap 
+# Documentation see at: http://moc.daper.net
+# ===========================================================================
+
+
+# config and keymap example files are in:
+cd /usr/share/doc/moc/examples
+
+# copy these files to:
+cp config.example /home/nils/.moc/config
+cp keymap.example /home/nils/.moc/keymap
+
+# themes are in:
+cp /usr/share/moc/themes
+
+# copy these files to:
+/home/nils/.moc/themes/
+
+# moc start command is:
+mocp
+
+######### EOF ##########
