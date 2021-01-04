@@ -257,7 +257,7 @@ XX.X Set up sound (instructions see
 37. Install workflow packages
 sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
 htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
-pacman-contrib github-cli
+pacman-contrib github-cli newsboat
 
     packages description:
     figlet                    --> display large letters out of text
@@ -275,6 +275,7 @@ pacman-contrib github-cli
     zathura-djvu              --> document viewer PDF, PS, DjVu
     pacman-contrib            --> contributed scripts and tools for pacman systems
     github-cli                --> cli client gor github
+    newsboat                  --> rss feed
 
 38. Set defolt programms, put in file:
 vim ~/.bash_profile
