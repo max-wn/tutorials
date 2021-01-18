@@ -241,7 +241,15 @@ python-keyring python-dateutil python-pyxdg python-mpd2
         xinit
 
 34. Install additional important packages
-sudo pacman -S git openssh
+    sudo pacman -S git openssh gnupg pass rsync veracrypt
+    
+    packages description:
+    git                       --> distributed version control system
+    openssh                   --> tool for remote login with the SSH protocol
+    gnupg                     --> complete and free implementation of the OpenPGP standard
+    pass                      --> password manager
+    rsync                     --> file copying tool for remote and local files
+    veracrypt                 --> disk encryption
 
 35. Install fonts
 sudo pacman -S ttf-inconsolata
@@ -255,9 +263,10 @@ XX.X Set up sound (instructions see
         alsamixer
 
 37. Install workflow packages
-sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
-htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
-pacman-contrib github-cli newsboat
+    sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
+    htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
+    pacman-contrib github-cli newsboat perl-image-exiftool calibre mpv krita
+    gimp
 
     packages description:
     figlet                    --> display large letters out of text
@@ -270,12 +279,17 @@ pacman-contrib github-cli newsboat
     mc                        --> file manager
     calcurse                  --> todo manager
     sxiv                      --> lightweight and scriptable image viewer
-    sxiv zathura              --> document viewer PDF, PS, DjVu
+    zathura                   --> document viewer PDF, PS, DjVu
     zathura-pdf-mupdf         --> document viewer PDF, PS, DjVu
     zathura-djvu              --> document viewer PDF, PS, DjVu
     pacman-contrib            --> contributed scripts and tools for pacman systems
     github-cli                --> cli client gor github
     newsboat                  --> rss feed
+    perl-image-exiftool       --> Reader and rewriter of EXIF informations that supports raw files
+    calibre                   --> e-book management application
+    mpv                       --> video player
+    krita                     --> edit and paint images
+    gimp                      --> GNU Image Manipulation Program
 
 38. Set defolt programms, put in file:
 vim ~/.bash_profile
@@ -334,6 +348,13 @@ PACMAN
     vim /etc/pacman.conf
 2 - Update all packages
     sudo pacman -Syu
+    
+    sudo pacman -Syyu
+        will refresh your databases even if they are already up to date.
+        I have found this to rarely be necessary,
+        even when updating my mirrorlist or adding custom repos.
+        Could be used when your database was corrupted,
+        and that happens exactly very rarely in Arch.
 
 3 - Install packages
     sudo pacman -S <packagename>
