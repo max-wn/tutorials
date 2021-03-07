@@ -164,7 +164,7 @@ ARCH INSTALLATION TUTOR
         locale-gen
     24.2. Set (wright in file) language in:
         vim /etc/locale.conf
-        LANG=en_US.UTF-8.UTF-8
+        LANG=en_US.UTF-8
 
 25. Set time zone
    ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
@@ -373,6 +373,26 @@ PACMAN
 
 8 - Remove not needed package/dependancy which could be safly remove
     sudo pacman -Rns $(pacman -Qtdq)
+
+===============================================================================
+УСТАНОВКА РУССКОГО ЯЗЫКА (RALT --> ENG, Shift + RALT --> RUS)
+1 - Check keyboard settigs on the your computer:
+    setxkbmap -layout us,ru -print
+2 - create file config:
+    touch ~/.config/xkb/config
+3 - Write the result in the file:
+    setxkbmap -layout us,ru -print > ~/.config/xkb/config
+4 - chenge string --> xkb_symbols... as folows: 
+    
+    xkb_symbols "my" {
+    include "pc+us+ru:2+inet(evdev)"
+    key <RALT> { [ ISO_First_Group, ISO_Last_Group ] };
+    }; 
+
+5 - Load config:
+    xkbcomp $HOME/.config/xkb/config $DISPLAY
+6 - source finde here:
+    https://m.habr.com/ru/post/486872/    
 
 ===============================================================================
 EOF
