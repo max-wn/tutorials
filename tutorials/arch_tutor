@@ -164,7 +164,7 @@ ARCH INSTALLATION TUTOR
         locale-gen
     24.2. Set (wright in file) language in:
         vim /etc/locale.conf
-        LANG=en_US.UTF-8.UTF-8
+        LANG=en_US.UTF-8
 
 25. Set time zone
    ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
@@ -252,7 +252,7 @@ python-keyring python-dateutil python-pyxdg python-mpd2
     veracrypt                 --> disk encryption
 
 35. Install fonts
-sudo pacman -S ttf-inconsolata
+sudo pacman -S ttf-inconsolata ttf-jetbrains-mono
     plus: ttf-linux-libertine
     or: noto-fonts
 
@@ -266,7 +266,7 @@ XX.X Set up sound (instructions see
     sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
     htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
     pacman-contrib github-cli newsboat perl-image-exiftool calibre mpv krita
-    gimp
+    gimp tldr
 
     packages description:
     figlet                    --> display large letters out of text
@@ -290,6 +290,7 @@ XX.X Set up sound (instructions see
     mpv                       --> video player
     krita                     --> edit and paint images
     gimp                      --> GNU Image Manipulation Program
+    tldr                      --> Command line client for tldr, a collection of simplified and community-driven man pages
 
 38. Set defolt programms, put in file:
 vim ~/.bash_profile
