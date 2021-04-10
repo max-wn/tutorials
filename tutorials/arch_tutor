@@ -266,7 +266,7 @@ XX.X Set up sound (instructions see
     sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
     htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
     pacman-contrib github-cli newsboat perl-image-exiftool calibre mpv krita
-    gimp tldr
+    gimp tldr pandoc texlive-most texlive-lang biber
 
     packages description:
     figlet                    --> display large letters out of text
@@ -291,6 +291,10 @@ XX.X Set up sound (instructions see
     krita                     --> edit and paint images
     gimp                      --> GNU Image Manipulation Program
     tldr                      --> Command line client for tldr, a collection of simplified and community-driven man pages
+    pandoc                    --> Conversion between markup formats
+    texlive-most              --> group contains most TeX Live packages
+    texlive-lang              --> group contains packages providing character sets and features for languages with non-latin characters
+    biber                     --> A Unicode-capable BibTeX replacement for biblatex users
 
 38. Set defolt programms, put in file:
 vim ~/.bash_profile
