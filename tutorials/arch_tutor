@@ -70,7 +70,7 @@ ARCH INSTALLATION TUTOR
         mkfs.ext4 /dev/nvme0n1p1
     for root
         mkfs.ext4 /dev/nvme0n1p3
-    for home 
+    for home
         mkfs.ext4 /dev/nvme0n1p4
     for swap
         mkswap /dev/nvme0n1p2
@@ -81,10 +81,10 @@ ARCH INSTALLATION TUTOR
     mount /dev/nvme01p3 /mnt
 
 8. Create home directory
-    mkdir /mnt/home 
+    mkdir /mnt/home
 
 9. Create boot directory
-    mkdir /mnt/boot 
+    mkdir /mnt/boot
 
 10. Mount boot
     mount /dev/nvme01p1 /mnt/boot
@@ -242,7 +242,7 @@ python-keyring python-dateutil python-pyxdg python-mpd2
 
 34. Install additional important packages
     sudo pacman -S git openssh gnupg pass rsync veracrypt
-    
+
     packages description:
     git                       --> distributed version control system
     openssh                   --> tool for remote login with the SSH protocol
@@ -295,6 +295,7 @@ XX.X Set up sound (instructions see
     texlive-most              --> group contains most TeX Live packages
     texlive-lang              --> group contains packages providing character sets and features for languages with non-latin characters
     biber                     --> A Unicode-capable BibTeX replacement for biblatex users
+    lynx                      --> A text browser for the World Wide Web
 
 38. Set defolt programms, put in file:
 vim ~/.bash_profile
@@ -353,7 +354,7 @@ PACMAN
     vim /etc/pacman.conf
 2 - Update all packages
     sudo pacman -Syu
-    
+
     sudo pacman -Syyu
         will refresh your databases even if they are already up to date.
         I have found this to rarely be necessary,
@@ -387,17 +388,17 @@ PACMAN
     touch ~/.config/xkb/config
 3 - Write the result in the file:
     setxkbmap -layout us,ru -print > ~/.config/xkb/config
-4 - chenge string --> xkb_symbols... as folows: 
-    
+4 - chenge string --> xkb_symbols... as folows:
+
     xkb_symbols "my" {
     include "pc+us+ru:2+inet(evdev)"
     key <RALT> { [ ISO_First_Group, ISO_Last_Group ] };
-    }; 
+    };
 
 5 - Load config:
     xkbcomp $HOME/.config/xkb/config $DISPLAY
 6 - source finde here:
-    https://m.habr.com/ru/post/486872/    
+    https://m.habr.com/ru/post/486872/
 
 ===============================================================================
 EOF
