@@ -1,11 +1,9 @@
 # ===========================================================================
 # INSTRUCTIONS FOR MOC
 # ===========================================================================
-#  Maintainer: WILLENBROCK                                                       
-# Last change: 23.05.2020                           
-# To use config and keymap files, copy them to                                                         
+# To use config and keymap files, copy them to
 #   for Linux: ~/.moc/config
-#              ~/.moc/keymap 
+#              ~/.moc/keymap
 # Documentation see at: http://moc.daper.net
 # ===========================================================================
 
