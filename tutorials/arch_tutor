@@ -288,6 +288,8 @@ XX.X Set up sound (instructions see
     perl-image-exiftool       --> Reader and rewriter of EXIF informations that supports raw files
     calibre                   --> e-book management application
     mpv                       --> video player
+    youtube-dl                --> A command-line program to download videos from YouTube.com and a few more sites
+    ffmoeg                    --> Complete solution to record, convert and stream audio and video
     krita                     --> edit and paint images
     gimp                      --> GNU Image Manipulation Program
     tldr                      --> Command line client for tldr, a collection of simplified and community-driven man pages
@@ -296,6 +298,7 @@ XX.X Set up sound (instructions see
     texlive-lang              --> group contains packages providing character sets and features for languages with non-latin characters
     biber                     --> A Unicode-capable BibTeX replacement for biblatex users
     lynx                      --> A text browser for the World Wide Web
+    stow                      --> Manage installation of multiple softwares in the same directory tree
 
 38. Set defolt programms, put in file:
 vim ~/.bash_profile
