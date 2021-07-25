@@ -3,12 +3,15 @@
 1. USB format
 
 Find name of USB (for example it is `sda`)
+    
     sudo fdisk -l
 
 Unmount USB
+    
     sudo umount /dev/sda
 
 Format USB
+    
     sudo mkfs -t ext4 -L FLASH /dev/sda
 
 2. Download latest Arch iso file  and verify signature. All instructions
@@ -31,27 +34,47 @@ Format USB
 ---
 
 1. Check our disks (for example it is 'nvme0n1')
+    
     lsblk
+
 2. Check UEFI or BIOS (this tutor for BIOS only)
+    
     ls /sys/firmware/efi/efivars
+
 3. Check internet connection
 * check ip and ping (if no ip and ping use wifi instructions):
+    
     ip addr show
     ping -c 3 archlinux.org
+
 * Connect to wifi via `wpa_supplicant`
+
 * Find device name (for example it is `wlan0`)
+    
     iw dew
+
 * Set rfkill off
+
     rfkill unblock wifi
+
 * Set device up
+    
     ip link set wlan0 up
+
 * Scan networks
+    
     iw dev wlan0 scan | grep SSID
+
 * Generate config file
+    
     wpa_passphrase <nameofnetwork> <passwordfornetwork> > wpa_nameofnetwork.conf
+
 * Connect to network
+    
     wpa_supplicant -B -i wlan0 -c wpa_nameofnetwork.conf
+
 * Check connection
+    
     ping -c 3 archlinux.org
 
 ==========
