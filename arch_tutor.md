@@ -1,55 +1,55 @@
-===============================================================================
-ARCH INSTALLATION TUTOR
-===============================================================================
+# ARCH INSTALLATION TUTOR
+
 1. USB format
-    1.1. Find name of USB (for example it is sda)
-        $ sudo fdisk -l
-    1.2. Unmount USB
-        $ sudo umount /dev/sda
-    1.3. Format USB
-        $ sudo mkfs -t ext4 -L FLASH /dev/sda
+Find name of USB (for example it is sda)
+    sudo fdisk -l
+Unmount USB
+    sudo umount /dev/sda
+Format USB
+    sudo mkfs -t ext4 -L FLASH /dev/sda
 
 2. Download latest Arch iso file  and verify signature. All instructions
-   awaliable in wiki:
-        https://wiki.archlinux.org/index.php/Installation_guide
-    for example on macOS:
-        1. download iso from: https://www.archlinux.org/download/
-        2. cd to Download directory
-        3. get the checksum:
-            $ md5 archlinux-2020.11.01-x86_64.iso
-        4. the command return md5 checksum and you should compare it with md5
-           checksum mentioned  on site: https://www.archlinux.org/download/
+   awaliable in [wiki](https://wiki.archlinux.org/index.php/Installation_guide
+   "wiki guide")
 
+*for example on macOS:*
+1. download iso from [wiki](https://www.archlinux.org/download/ "wiki
+   downloads")
+2. cd to Download directory
+3. get the checksum:
+    md5 archlinux-2020.11.01-x86_64.iso
+4. the command return md5 checksum and you should compare it with md5 checksum
+   mentioned on [site](https://www.archlinux.org/download/ "wiki downloads")
 3. Write Arch to USB.
 4. Start installation as mentioned below.
-===============================================================================
+
+---
 
 1. Check our disks (for example it is 'nvme0n1')
     lsblk
 2. Check UEFI or BIOS (this tutor for BIOS only)
     ls /sys/firmware/efi/efivars
-
 3. Check internet connection
-    check ip and ping (if no ip and ping use wifi instructions):
+* check ip and ping (if no ip and ping use wifi instructions):
     ip addr show
     ping -c 3 archlinux.org
+* Connect to wifi via `wpa_supplicant`
+* Find device name (for example it is `wlan0`)
+    iw dew
+* Set rfkill off
+    rfkill unblock wifi
+* Set device up
+    ip link set wlan0 up
+* Scan networks
+    iw dev wlan0 scan | grep SSID
+* Generate config file
+    wpa_passphrase <nameofnetwork> <passwordfornetwork> > wpa_nameofnetwork.conf
+* Connect to network
+    wpa_supplicant -B -i wlan0 -c wpa_nameofnetwork.conf
+* Check connection
+    ping -c 3 archlinux.org
 
-    3.0. Connect to wifi via wpa_supplicant
-    3.1. Find device name (for example it is 'wlan0')
-        iw dew
-    3.2. Set rfkill off
-        rfkill unblock wifi
-    3.3. Set device up
-        ip link set wlan0 up
-    3.4. Scan networks
-        iw dev wlan0 scan | grep SSID
-    3.5. Generate config file
-        wpa_passphrase <nameofnetwork> <passwordfornetwork> >
-        wpa_nameofnetwork.conf
-    3.6. Connect to network
-        wpa_supplicant -B -i wlan0 -c wpa_nameofnetwork.conf
-    3.7. Check connection
-        ping -c 3 archlinux.org
+==========
 
 4. Set time
     timedatectl set-ntp true
