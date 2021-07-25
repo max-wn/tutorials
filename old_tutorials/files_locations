@@ -1,9 +1,0 @@
-##############################################################################
-
-## Important files locations
-/home/nils/.config/i3/config                # i3 config file
-/home/nils/.mutt/muttrc                     # muttrc file
-/home/nils/.vimrc                           # vimrc file
-/home/nils/.config/conky.conf               # conky config file
-/home/nils/.config/alacritty/alacritty.yml  # alacritty config file
-
