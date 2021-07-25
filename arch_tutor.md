@@ -1,10 +1,13 @@
 # ARCH INSTALLATION TUTOR
 
 1. USB format
-Find name of USB (for example it is sda)
+
+Find name of USB (for example it is `sda`)
     sudo fdisk -l
+
 Unmount USB
     sudo umount /dev/sda
+
 Format USB
     sudo mkfs -t ext4 -L FLASH /dev/sda
 
@@ -12,12 +15,14 @@ Format USB
    awaliable in [wiki](https://wiki.archlinux.org/index.php/Installation_guide
    "wiki guide")
 
-*for example on macOS:*
+**for example on macOS:**
 1. download iso from [wiki](https://www.archlinux.org/download/ "wiki
    downloads")
 2. cd to Download directory
 3. get the checksum:
+    
     md5 archlinux-2020.11.01-x86_64.iso
+
 4. the command return md5 checksum and you should compare it with md5 checksum
    mentioned on [site](https://www.archlinux.org/download/ "wiki downloads")
 3. Write Arch to USB.
