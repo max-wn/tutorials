@@ -1,24 +1,19 @@
-===============================================================================
-MY KEYBINDINGS
-===============================================================================
-The MODKEY is set to the (Mod4), this is Super key (aka the Windows key). I try
-to keep the keybindings consistent with all of my programms.
-===============================================================================
+# my keybindings
+
+The `MODKEY` is set to the (`Mod4`), this is `Super key` (aka the `Windows
+key`). I try to keep the keybindings consistent with all of my programms.
 
 Keybinding
 Action
 
-MODKEY + RETURN
+`MODKEY + RETURN`
 opens terminal (alacritty is the terminal but can be easily changed)
-
 
 MODKEY + SHIFT + RETURN
 opens run launcher (dmenu is the run launcher but can be easily changed)
 
-
 MODKEY + TAB
 rotates through the available layouts
-
 
 MODKEY + SHIFT + c
 closes window with focus
@@ -82,3 +77,7 @@ switch focus to next monitor
 
 MODKEY + comma
 switch focus to prev monitor
+
+---
+
+THE END
