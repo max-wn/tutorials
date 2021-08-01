@@ -1,17 +1,19 @@
-# ARCH INSTALLATION TUTOR
+# arch installation tutor
+
+## usb and iso preparation
 
 1. USB format
 
 Find name of USB (for example it is `sda`)
-    
+
     sudo fdisk -l
 
 Unmount USB
-    
+
     sudo umount /dev/sda
 
 Format USB
-    
+
     sudo mkfs -t ext4 -L FLASH /dev/sda
 
 2. Download latest Arch iso file  and verify signature. All instructions
@@ -21,9 +23,9 @@ Format USB
 **for example on macOS:**
 1. download iso from [wiki](https://www.archlinux.org/download/ "wiki
    downloads")
-2. cd to Download directory
+2. `cd` to Download directory
 3. get the checksum:
-    
+
     md5 archlinux-2020.11.01-x86_64.iso
 
 4. the command return md5 checksum and you should compare it with md5 checksum
@@ -31,26 +33,26 @@ Format USB
 3. Write Arch to USB.
 4. Start installation as mentioned below.
 
----
+## arch installation
 
 1. Check our disks (for example it is 'nvme0n1')
-    
+
     lsblk
 
 2. Check UEFI or BIOS (this tutor for BIOS only)
-    
+
     ls /sys/firmware/efi/efivars
 
 3. Check internet connection
 * check ip and ping (if no ip and ping use wifi instructions):
-    
+
     ip addr show
     ping -c 3 archlinux.org
 
 * Connect to wifi via `wpa_supplicant`
 
 * Find device name (for example it is `wlan0`)
-    
+
     iw dew
 
 * Set rfkill off
@@ -58,102 +60,129 @@ Format USB
     rfkill unblock wifi
 
 * Set device up
-    
+
     ip link set wlan0 up
 
 * Scan networks
-    
+
     iw dev wlan0 scan | grep SSID
 
 * Generate config file
-    
+
     wpa_passphrase <nameofnetwork> <passwordfornetwork> > wpa_nameofnetwork.conf
 
 * Connect to network
-    
+
     wpa_supplicant -B -i wlan0 -c wpa_nameofnetwork.conf
 
 * Check connection
-    
-    ping -c 3 archlinux.org
 
-==========
+    ping -c 3 archlinux.org
 
 4. Set time
     timedatectl set-ntp true
 
 5. Disk partition
-    fdisk /dev/nvme0n1
-        (interface: m - help, p - disks, d - delete disk, n - new partition)
-        hint 'n' for new partition, always chose primary, start sector
-        defoult, end sector put the size as mentioned below.
-        1 - primary (boot): +512M
-        2 - primary (swap): +16G
-        3 - primary (root): +50G
-        4 - primary (home): (hint Enter for all the rest space)
-        hint 'w' for write these partitions
 
-6. Set file system
-    for boot
-        mkfs.ext4 /dev/nvme0n1p1
-    for root
-        mkfs.ext4 /dev/nvme0n1p3
-    for home
-        mkfs.ext4 /dev/nvme0n1p4
-    for swap
-        mkswap /dev/nvme0n1p2
-    swap activation
-        swapon /dev/nvme0n1p2
+    fdisk /dev/nvme0n1
+
+interface: `m` - help, `p` - disks, `d` - delete disk, `n` - new partition
+hint `n` for new partition, always chose primary, start sector defoult, end
+sector put the size as mentioned below:
+
+* 1 - primary (boot): +512M
+* 2 - primary (swap): +16G
+* 3 - primary (root): +50G
+* 4 - primary (home): hit `Enter` for all the rest space, hit `w` for write
+  these partitions
+
+6. Set file system as follows:
+
+for boot
+
+    mkfs.ext4 /dev/nvme0n1p1
+
+for root
+
+    mkfs.ext4 /dev/nvme0n1p3
+
+for home
+
+    mkfs.ext4 /dev/nvme0n1p4
+
+for swap
+
+    mkswap /dev/nvme0n1p2
+
+swap activation
+
+    swapon /dev/nvme0n1p2
 
 7. Mount root
+
     mount /dev/nvme01p3 /mnt
 
 8. Create home directory
+
     mkdir /mnt/home
 
 9. Create boot directory
+
     mkdir /mnt/boot
 
 10. Mount boot
+
     mount /dev/nvme01p1 /mnt/boot
 
 11. Mount home
+
     mount /dev/nvme01p4 /mnt/home
 
-11.1 Correct mirror list (put Russia first)
+* Correct mirror list (put Russia first)
+
     sudo vim /etc/pacman.d/mirrorlist
 
 12. Install arch
+
     pacstrap /mnt base base-devel linux linux-firmware linux-headers vim
     inetutils netctl dhcpcd dialog iw iwd wpa_supplicant intel-ucode man-pages
     man-db
 
 13. Generate fstab
+
     genfstab /mnt
 
 14. Force fstab to use UUID
+
     genfstab -U /mnt
 
 15. Write fstab to file
+
     genfstab -U /mnt >> /mnt/etc/fstab
 
 16. Transfer from USB linux to Computer linux
+
     arch-chroot /mnt
 
 17. Add hosts
+
     vim /etc/hosts
 
-    put the followimg in file:
+put the followimg in file:
 
     127.0.0.1   localhost
     ::1         localhost
     127.0.1.1   <hostname>.localdomine <hostname>
 
 18. Set Network Manager
+
     pacman -S networkmanager network-manager-applet
 
 19. Enable Network Manager
+
     systemctl enable NetworkManager
+
+===
 
 19.1. NM tuning for wifi
     1. disable dhcpcd on ethernet
@@ -363,7 +392,8 @@ Emergency action:
     Open new tty session
         Ctrl + Alt + F2 (or F3 or F4 etc)
 
-===============================================================================
+---
+
 MOUNT USB
 0. Finde a name of USB device (for example it is sda)
     sudo fdisk -l
@@ -379,7 +409,9 @@ MOUNT USB
     blkid -o list -c /dev/null
 6. Unmount USB
     sudo umount /mnt/usbstick
-===============================================================================
+
+---
+
 PACMAN
 1 - Uncomment Color and VerbosePkgLists lines in file:
     vim /etc/pacman.conf
@@ -411,7 +443,8 @@ PACMAN
 8 - Remove not needed package/dependancy which could be safly remove
     sudo pacman -Rns $(pacman -Qtdq)
 
-===============================================================================
+---
+
 УСТАНОВКА РУССКОГО ЯЗЫКА (RALT --> ENG, Shift + RALT --> RUS)
 1 - Check keyboard settigs on the your computer:
     setxkbmap -layout us,ru -print
@@ -431,6 +464,6 @@ PACMAN
 6 - source finde here:
     https://m.habr.com/ru/post/486872/
 
-===============================================================================
-EOF
-===============================================================================
+---
+
+THE END
