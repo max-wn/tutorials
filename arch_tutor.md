@@ -21,29 +21,29 @@ Format USB
    "wiki guide")
 
 **for example on macOS:**
-1. download iso from [wiki](https://www.archlinux.org/download/ "wiki
+* download iso from [wiki](https://www.archlinux.org/download/ "wiki
    downloads")
-2. `cd` to Download directory
-3. get the checksum:
+* `cd` to Download directory
+* get the checksum:
 
     md5 archlinux-2020.11.01-x86_64.iso
 
-4. the command return md5 checksum and you should compare it with md5 checksum
+* the command return md5 checksum and you should compare it with md5 checksum
    mentioned on [site](https://www.archlinux.org/download/ "wiki downloads")
-3. Write Arch to USB.
-4. Start installation as mentioned below.
+* Write Arch to USB.
+* Start installation as mentioned below.
 
 ## arch installation
 
-1. Check our disks (for example it is 'nvme0n1')
+### Check our disks (for example it is 'nvme0n1')
 
     lsblk
 
-2. Check UEFI or BIOS (this tutor for BIOS only)
+### Check UEFI or BIOS (this tutor for BIOS only)
 
     ls /sys/firmware/efi/efivars
 
-3. Check internet connection
+### Check internet connection
 * check ip and ping (if no ip and ping use wifi instructions):
 
     ip addr show
@@ -79,10 +79,10 @@ Format USB
 
     ping -c 3 archlinux.org
 
-4. Set time
+### Set time
     timedatectl set-ntp true
 
-5. Disk partition
+### Disk partition
 
     fdisk /dev/nvme0n1
 
@@ -96,7 +96,7 @@ sector put the size as mentioned below:
 * 4 - primary (home): hit `Enter` for all the rest space, hit `w` for write
   these partitions
 
-6. Set file system as follows:
+### Set file system as follows:
 
 for boot
 
@@ -118,23 +118,23 @@ swap activation
 
     swapon /dev/nvme0n1p2
 
-7. Mount root
+### Mount root
 
     mount /dev/nvme01p3 /mnt
 
-8. Create home directory
+### Create home directory
 
     mkdir /mnt/home
 
-9. Create boot directory
+### Create boot directory
 
     mkdir /mnt/boot
 
-10. Mount boot
+### Mount boot
 
     mount /dev/nvme01p1 /mnt/boot
 
-11. Mount home
+### Mount home
 
     mount /dev/nvme01p4 /mnt/home
 
@@ -142,29 +142,29 @@ swap activation
 
     sudo vim /etc/pacman.d/mirrorlist
 
-12. Install arch
+### Install arch
 
     pacstrap /mnt base base-devel linux linux-firmware linux-headers vim
     inetutils netctl dhcpcd dialog iw iwd wpa_supplicant intel-ucode man-pages
     man-db
 
-13. Generate fstab
+### Generate fstab
 
     genfstab /mnt
 
-14. Force fstab to use UUID
+### Force fstab to use UUID
 
     genfstab -U /mnt
 
-15. Write fstab to file
+### Write fstab to file
 
     genfstab -U /mnt >> /mnt/etc/fstab
 
-16. Transfer from USB linux to Computer linux
+### Transfer from USB linux to Computer linux
 
     arch-chroot /mnt
 
-17. Add hosts
+### Add hosts
 
     vim /etc/hosts
 
@@ -174,31 +174,45 @@ put the followimg in file:
     ::1         localhost
     127.0.1.1   <hostname>.localdomine <hostname>
 
-18. Set Network Manager
+### Set Network Manager
+
+1. install NM
 
     pacman -S networkmanager network-manager-applet
 
-19. Enable Network Manager
+2. Enable Network Manager
 
     systemctl enable NetworkManager
 
-===
+3. NM tuning for wifi
 
-19.1. NM tuning for wifi
-    1. disable dhcpcd on ethernet
-        sudo systemctl disable dhcpcd@enp8s0.service
-    2. disable netctl on wifi
-        sudo systemctl disable netctl-auto@wlan0.service
-    2. enable NM
-        sudo systemctl enable NetworkManager.service
-    3. reboot
-        reboot
-    4.Show connections (for example it is wlan0)
-        nmcli connection
-    5. Connect to a wifi network
-        nmcli device wifi connect wlan0 password <yourpassword>
-    6. More info see in wiki
-        https://wiki.archlinux.org/index.php/NetworkManager
+* disable dhcpcd on ethernet
+
+    sudo systemctl disable dhcpcd@enp8s0.service
+
+* disable netctl on wifi
+
+    sudo systemctl disable netctl-auto@wlan0.service
+
+* enable NM
+
+    sudo systemctl enable NetworkManager.service
+
+* reboot
+
+    reboot
+
+* Show connections (for example it is wlan0)
+
+    nmcli connection
+
+* Connect to a wifi network
+
+    nmcli device wifi connect wlan0 password <yourpassword>
+
+* More info see in [wiki](https://wiki.archlinux.org/index.php/NetworkManager "NM archwiki")
+
+=====
 
 20. Set grub
     pacman -S grub
