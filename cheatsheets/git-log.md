@@ -23,7 +23,7 @@ git log -1 -p              # last detailed commit
 git diff --staged          # show difference in detail
 ```
 
-See [gitrevisions](./git-revisions).
+See [gitrevisions](./git-revisions.md).
 
 ### Basic filters
 
@@ -102,8 +102,8 @@ git log -- app/file.rb          # only file
     --pretty="format:%H"
 ```
 
-See: [Git log format cheatsheet](./git-log-format)
+See: [Git log format cheatsheet](./git-log-format.md)
 
 ## Also see
 
-- [Git log format cheatsheet](./git-log-format)
+- [Git log format cheatsheet](./git-log-format.md)
