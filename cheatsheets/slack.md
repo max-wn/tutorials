@@ -1,16 +1,20 @@
 # slack cheatsheet
 
 use this command in Slack to start receiving updates about that project:
-    /github subscribe [owner/repo]
+
+`/github subscribe [owner/repo]`
 
 keyboard shortcuts panel
-    cmd-/
+
+`cmd-/`
 
 add a file
-    cmd-u
+
+`cmd-u`
 
 create a snippet
-    cmd-shift-enter
+
+`cmd-shift-enter`
 
 ---
 
