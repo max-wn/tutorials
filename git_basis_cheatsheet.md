@@ -1,34 +1,47 @@
-# git cheatsheet                                                             |
+# git cheatsheet
 
 ## git configuration
-`git config --global user.name "name"`  # add name
 
-`git config --global user.email "email"`  # add email
+add name
 
-`git config -l`  # check config
+`git config --global user.name "name"`
+
+add email
+
+`git config --global user.email "email"`
+
+check config
+
+`git config -l`
 
 ## linux config file:
-    /home/myuser/.gitconfig
+
+`/home/myuser/.gitconfig`
+
 ## windows config file:
-    C:\Users\myuser\.gitconfig
 
-`git init .`  # generation data base git in dir
+`C:\Users\myuser\.gitconfig`
 
-`git status`  # check status of git chenges
+## basic
 
-`git add .`  # uplode all files in git
+generation data base git in dir
 
-`git commit -m "my initial commit"`  # copy in local repository and wrate a
-comment
+`git init .`
 
-## logs
-`git log`            # check log
-`git log -1`         # check last commit
-`git log -p`         # detailed check
-`git log -1 -p`      # all info about commit
-`git diff --staged`  # show difference in detail
+check the status
+
+`git status`
+
+add all files to staging
+
+`git add .`
+
+initial commit
+
+`git commit -m "my initial commit"`
 
 ## file operations
+
 `git rm --cached [file_name]` # удалить файл из репозитория гит
 
 `rm -fr .git`  # полностью удалить директорию гит
