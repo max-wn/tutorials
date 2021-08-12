@@ -1,4 +1,9 @@
-# firefox advanced security settings
+---
+title: firefox advanced security settings
+category: pivacy
+layout:
+updated:
+---
 
 1. make sure you are running the latest version of Firefox
 2. make sure you configured Firefox for privacy using [this video][001]

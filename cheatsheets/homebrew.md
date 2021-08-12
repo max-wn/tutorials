@@ -1,4 +1,9 @@
-# homebrew cheatsheet
+---
+title: homebrew
+category: macos
+layout:
+updated:
+---
 
 Display brief statistics for your Homebrew installation.
 

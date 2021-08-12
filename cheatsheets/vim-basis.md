@@ -1,4 +1,9 @@
-# vim tutor
+---
+title: vim tutor
+category: vim
+layout:
+updated:
+---
 
 _Помните, что вы должны учиться в процессе работы, а не просто запоминая._
 

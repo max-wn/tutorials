@@ -1,4 +1,9 @@
-# шпаргалка по mc (midnight commander)
+---
+title: шпаргалка по mc (midnight commander)
+category: mc
+layout:
+updated:
+---
 
 ## Общее
 - `Ctrl+x,j` — Показ фоновых задач

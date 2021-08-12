@@ -1,4 +1,9 @@
-# some pip commands
+---
+title: pip
+category: python
+layout:
+updated:
+---
 
 ```bash
 pip3 install colorama            # Команда для установки colorama

@@ -1,6 +1,8 @@
 ---
 title: Git tricks
 category: Git
+layout:
+updated:
 ---
 
 ## Refs

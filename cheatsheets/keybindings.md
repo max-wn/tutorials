@@ -1,81 +1,91 @@
-# my keybindings
+---
+title: my keybindings
+category:
+layout:
+updated:
+---
 
 The `MODKEY` is set to the (`Mod4`), this is `Super key` (aka the `Windows
 key`). I try to keep the keybindings consistent with all of my programms.
 
 Keybinding
+
 Action
 
 `MODKEY + RETURN`
+
 opens terminal (alacritty is the terminal but can be easily changed)
 
-MODKEY + SHIFT + RETURN
+`MODKEY + SHIFT + RETURN`
+
 opens run launcher (dmenu is the run launcher but can be easily changed)
 
-MODKEY + TAB
+`MODKEY + TAB`
+
 rotates through the available layouts
 
-MODKEY + SHIFT + c
+`MODKEY + SHIFT + c`
+
 closes window with focus
 
+`MODKEY + control + r`
 
-MODKEY + control + r
 restarts qtile
 
+`MODKEY + SHIFT + q`
 
-MODKEY + SHIFT + q
 quits qtile
 
+`MODKEY + 1-9`
 
-MODKEY + 1-9
 switch focus to workspace (1-9)
 
+`MODKEY + SHIFT + 1-9`
 
-MODKEY + SHIFT + 1-9
 send focused window to workspace (1-9)
 
+`MODKEY + j`
 
-MODKEY + j
 lazy layout up (switches focus between windows in the stack)
 
+`MODKEY + k`
 
-MODKEY + k
 lazy layout down (switches focus between windows in the stack)
 
+`MODKEY + SHIFT + j`
 
-MODKEY + SHIFT + j
 lazy layout shuffle_up (rotates the windows in the stack)
 
+`MODKEY + SHIFT + k`
 
-MODKEY + SHIFT + k
 lazy layout shuffle_down (rotates the windows in the stack)
 
+`MODKEY + h`
 
-MODKEY + h
 expand size of window (MondadTall layout)
 
+`MODKEY + l`
 
-MODKEY + l
 shrink size of window (MondadTall layout)
 
+`MODKEY + w`
 
-MODKEY + w
 switch focus to monitor 1
 
+`MODKEY + e`
 
-MODKEY + e
 switch focus to monitor 2
 
+`MODKEY + r`
 
-MODKEY + r
 switch focus to monitor 3
 
+`MODKEY + period`
 
-MODKEY + period
 switch focus to next monitor
 
+`MODKEY + comma`
 
-MODKEY + comma
 switch focus to prev monitor
 
 ---

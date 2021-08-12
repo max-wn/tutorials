@@ -1,4 +1,9 @@
-# debian cheatsheet
+---
+title: Debian
+category: linux
+layout:
+updated:
+---
 
 создать резервную копию существующего файла _sources.list_
 
@@ -39,7 +44,7 @@ cat /proc/sys/vm/swappiness
 file with swappiness
 
 ```bash
-sudo nano /etc/sysctl.con`
+sudo nano /etc/sysctl.con
 ```
 
 set swappiness parametr in file
