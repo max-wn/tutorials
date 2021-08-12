@@ -37,6 +37,14 @@ Deletes `origin/*` branches in your local copy. Doesn't affect the remote.
 
 ```bash
 git branch --list
+git branch -a            # see all branch
+git branch`              # see where we are branch
+git branch "branch"`     # add branch
+git checkout "branch"`   # move branch
+git branch -d "branch"`  # delete branch
+git branch -D "branch"`  # delete branch if not make commit
+git branch -b "branch"`  # add and move branch
+git merge "branch"`      # merge branch wich branch
 ```
 
 Existing branches are listed. Current branch will be highlighted with an asterisk.

@@ -102,3 +102,7 @@ A ─┬─ E ── F ── G   master
 
 * [Git Tools - Revision Selection](https://www.kernel.org/pub/software/scm/git/docs/gitrevisions.html) _(git-scm.com)_
 * [gitrevisions(7)](https://www.kernel.org/pub/software/scm/git/docs/gitrevisions.html) _(kernel.org)_
+
+---
+
+THE END

@@ -1,18 +1,17 @@
-# git cheatsheet
+---
+title: Git basis
+category: Git
+layout:
+updated:
+---
 
 ## git configuration
 
-add name
-
-`git config --global user.name "name"`
-
-add email
-
-`git config --global user.email "email"`
-
-check config
-
-`git config -l`
+```bash
+git config --global user.name "name"    # add user name
+git config --global user.email "email"  # add user e-mail
+git config -l                           #  check config
+```
 
 ## linux config file:
 
@@ -24,75 +23,50 @@ check config
 
 ## basic
 
-generation data base git in dir
-
-`git init .`
-
-check the status
-
-`git status`
-
-add all files to staging
-
-`git add .`
-
-initial commit
-
-`git commit -m "my initial commit"`
+```bash
+git init .                         # generation data base git in dir
+git status                         # check the status
+git add -A                         # add all files to staging
+git commit -m "my initial commit"  # initial commit
+git remote -v                      # see projects
+```
 
 ## file operations
 
-`git rm --cached [file_name]` # удалить файл из репозитория гит
+```bash
+git rm --cached [file_name]  # удалить файл из репозитория гит
+rm -fr .git                  # полностью удалить директорию гит
+touch .gitignore             # игнорировать --> туда вписать файл, директорию,
+                             # расширение и т д
+git checkout -- file.txt     # откатывает назад изменения в файле
+```
 
-`rm -fr .git`  # полностью удалить директорию гит
+## clone, push, pull
 
-`.gitignore`  # игнорировать ---> туда вписать файл,
-директорию, расширение и т д
+```bash
+git clone 'link in project'               # downloud in copmuter
+git push origin master                    # upload master in GitHub remote
+git push --set-upstream origin fix_error  # push and generation branch in github
+git push origin --delete fix_error        # delete global branch
+```
 
-`git checkout -- file.txt`    # откатывает назад изменения в файле
+## ssh
 
-`git clone 'link in project`  # downloud in copmuter
+```bash
+ssh-keygen                          # key generation
+git remote -v                       # cheking the link
+git remote set-url origin link SSH  # remove link
+```
 
-`git push origin`  # uploud in GitHub global
+## commit and reset
 
-`ssh-keygen`  # key generation
-
-`git remote -v`  # cheking the link
-
-`git remote set-url origin link SSH`  # remove link
-
-`git branch`  # see where we are branch
-
-`git branch "branch"`  # add branch
-
-`git checkout "branch"`  # move branch
-
-`git branch -d "branch"`  # delete branch
-
-`git branch -D "branch"`  # delete branch if not make commit
-
-`git branch -b "branch"`  # add and move branch
-
-`git merge "branch"`  # merge branch wich branch
-
-`git checkout "hash"`  # return to a diferent hash
-
-`git commit --amend`  # chenge last commit
-
-`git reset --hard HEAD~2`  # delete all version 2 commits back
-
-`git reset --soft HEAD~2`  # delete all commit log 2 commits back
-
-`git push --set-upstream origin fix_error`  # push and generation branch in
-github
-
-`git push origin --delete fix_error`  # delete global branch
-
-`git reset "file"`  # remove from the done position
-
-`git branch -a`  # see all branch
-
-`git remote -v`  # see projects
+```bash
+git checkout [hash]      # return to a diferent hash
+git commit --amend       # chenge last commit
+git reset --hard HEAD~2  # delete all version 2 commits back
+git reset --soft HEAD~2  # delete all commit log 2 commits back
+git reset [file]         # remove from the done position
+```
 
 ---
 

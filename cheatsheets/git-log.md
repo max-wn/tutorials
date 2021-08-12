@@ -107,3 +107,7 @@ See: [Git log format cheatsheet](./git-log-format.md)
 ## Also see
 
 - [Git log format cheatsheet](./git-log-format.md)
+
+---
+
+THE END
