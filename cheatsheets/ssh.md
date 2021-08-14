@@ -71,14 +71,14 @@ Host *
   IdentityFile ~/.ssh/id_ed25519
 ```
 
-Add your SSH **private** key to the ssh-agent and store your passphrase in the
+Add your SSH ***private*** key to the ssh-agent and store your passphrase in the
 keychain
 
 ```bash
 ssh-add -K ~/.ssh/id_ed25519
 ```
 
-Adding a new  **public** SSH key to your GitHub account and test connection
+Adding a new  ***public*** SSH key to your GitHub account and test connection
 
 ```bash
 pbcopy < ~/.ssh/id_ed25519.pu  # Copy the SSH public key to your clipboard
@@ -86,11 +86,11 @@ pbcopy < ~/.ssh/id_ed25519.pu  # Copy the SSH public key to your clipboard
 ssh -T git@github.com          # testing your SSH connection
 ```
 
-Verify that the fingerprint in the message you see matches [001][GitHub's RSA
-public key fingerprint]. If it does, then type `yes`
+Verify that the fingerprint in the message you see matches [GitHub's RSA
+public key fingerprint][001]. If it does, then type `yes`
 
 ---
 
 THE END
 
-[001](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints "github fingerprint")
+[001]: https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints "github fingerprint"
