@@ -54,6 +54,7 @@ List public keys:
 ```bash
 gpg -k
 gpg --list-keys
+gpg --list-keys --keyid-format LONG
 ```
 
 List secret keys:
@@ -61,6 +62,7 @@ List secret keys:
 ```bash
 gpg -K
 gpg --list-secret-keys
+gpg --list-secret-keys --keyid-format LONG
 ```
 
 ### Using a keyserver

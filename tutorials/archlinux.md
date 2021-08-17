@@ -1,26 +1,11 @@
-# arch installation tutor
+---
+title: Arch Linux installation guide
+category: linux
+layout:
+updated: 15.08.2021
+---
 
-## usb and iso preparation
-
-### usb format
-
-Find name of USB (for example it is `sda`)
-
-```bash
-sudo fdisk -l
-```
-
-Unmount USB
-
-```bash
-sudo umount /dev/sda
-```
-
-Format USB
-
-```bash
-sudo mkfs -t ext4 -L FLASH /dev/sda
-```
+## download arch iso
 
 Download latest Arch iso file and verify signature. All instructions awaliable
 in [wiki](https://wiki.archlinux.org/index.php/Installation_guide "wiki
@@ -32,44 +17,65 @@ guide")
 * `cd` to Download directory
 * get the checksum:
 
-    ```bash
-    md5 archlinux-2020.11.01-x86_64.iso
-    ```
+```bash
+md5 /path/to/archlinux-version-x86_64.iso
+# or via gnupg
+gpg --keyserver-options auto-key-retrieve --verify /path/to/archlinux-version-x86_64.iso.sig
+```
 
 * the command return md5 checksum and you should compare it with md5 checksum
    mentioned on [site](https://www.archlinux.org/download/ "wiki downloads")
 * Write Arch to USB.
-* Start installation as mentioned below.
+
+## usb and iso preparation
+
+Find name of USB (for example it is `sdaX`)
+
+```bash
+lsblk  # for GNU Linux
+# or
+diskutil list  # for macos
+```
+
+Unmount USB
+
+```bash
+sudo umount /dev/sda
+# or
+diskutil unmountDisk /dev/sdaX
+```
+
+Format USB
+
+```bash
+sudo mkfs -t ext4 -L FLASH /dev/sdaX
+```
+
+Now copy the ISO image file to the device.
+
+```bash
+# for macos
+sudo dd if=path/to/archlinux-version-x86_64.iso of=/dev/rdiskX bs=1m
+```
 
 ## arch installation
 
-### Check our disks (for example it is 'nvme0n1')
-
-```bash
-lsblk
-```
-
-### Check UEFI or BIOS (this tutor for BIOS only)
+To verify the boot mode, list the efivars directory:
 
 ```bash
 ls /sys/firmware/efi/efivars
 ```
+
+If the command shows the directory without error, then the system is booted
+in UEFI mode. If the directory does not exist, the system may be booted in
+BIOS
 
 ### Check internet connection
 
 check ip and ping (if no ip and ping use wifi instructions):
 
 ```bash
-ip addr show
-ping -c 3 archlinux.org
-```
-
-Connect to wifi via `wpa_supplicant`
-
-Find device name (for example it is `wlan0`)
-
-```bash
-iw dew
+ip link  #Ensure your network interface is listed and enabled
 ```
 
 Set rfkill off
@@ -84,22 +90,66 @@ Set device up
 ip link set wlan0 up
 ```
 
-Scan networks
+#### Connect to wifi via `iwctl`
+
+[see link](https://wiki.archlinux.org/title/Iwctl "iwctl")
+
+To get an interactive prompt do:
+
+```bash
+iwctl
+```
+
+To list all available commands:
+
+```bash
+[iwd]# help
+```
+
+Connect to a network
+
+First, if you do not know your wireless device name, list all Wi-Fi devices:
+
+```bash
+[iwd]# device list
+```
+
+Then, to scan for networks:
+
+```bash
+[iwd]# station device scan
+```
+
+Find device name (for example it is `wlan0`)
+
+You can then list all available networks:
+
+```bash
+[iwd]# station device get-networks
+```
+
+Finally, to connect to a network:
+
+```bash
+[iwd]# station device connect SSID
+```
+
+If a passphrase is required, you will be prompted to enter it. Alternatively,
+you can supply it as a command line argument:
+
+```bash
+iwctl --passphrase passphrase station device connect SSID
+```
+
+Also you could find device name (for example it is `wlan0`)
+```bash
+iw dew
+```
+
+and scan networks
 
 ```bash
 iw dev wlan0 scan | grep SSID
-```
-
-Generate config file
-
-```bash
-wpa_passphrase <nameofnetwork> <passwordfornetwork> > wpa_nameofnetwork.conf
-```
-
-Connect to network
-
-```bash
-wpa_supplicant -B -i wlan0 -c wpa_nameofnetwork.conf
 ```
 
 Check connection
@@ -108,10 +158,19 @@ Check connection
 ping -c 3 archlinux.org
 ```
 
-### Set time
+### update system clock
 
 ```bash
 timedatectl set-ntp true
+timedatectl status  # to check the service status
+```
+
+### Check our disks (for example it is 'nvme0n1')
+
+```bash
+lsblk
+# or
+fdisk -l
 ```
 
 ### Disk partition
@@ -192,33 +251,16 @@ mount /dev/nvme01p1 /mnt/boot
 mount /dev/nvme01p4 /mnt/home
 ```
 
-### Correct mirror list (put Russia first)
-
-```bash
-sudo vim /etc/pacman.d/mirrorlist
-```
-
 ### Install arch
 
 ```bash
 pacstrap /mnt base base-devel linux linux-firmware linux-headers vim
-inetutils netctl dhcpcd dialog iw iwd wpa_supplicant intel-ucode man-pages
-man-db
+inetutils netctl dhcpcd man-pages man-db
 ```
 
 ### Generate fstab
 
-```bash
-genfstab /mnt
-```
-
-### Force fstab to use UUID
-
-```bash
-genfstab -U /mnt
-```
-
-### Write fstab to file
+generate fstab, force fstab to use UUID and write fstab to file
 
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -230,96 +272,16 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-### Add hosts
+### Set time zone
 
 ```bash
-vim /etc/hosts
+ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 ```
 
-put the followimg in file:
+### Generate time
 
 ```bash
-127.0.0.1   localhost
-::1         localhost
-127.0.1.1   <hostname>.localdomine <hostname>
-```
-
-### Set Network Manager
-
-install NM
-
-```bash
-pacman -S networkmanager network-manager-applet
-```
-
-Enable Network Manager
-
-```bash
-systemctl enable NetworkManager
-```
-
-### NM tuning for wifi
-
-disable dhcpcd on ethernet
-
-```bash
-sudo systemctl disable dhcpcd@enp8s0.service
-```
-
-disable netctl on wifi
-
-```bash
-sudo systemctl disable netctl-auto@wlan0.service
-```
-
-enable NM
-
-```bash
-sudo systemctl enable NetworkManager.service
-```
-
-reboot
-
-```bash
-reboot
-```
-
-Show connections (for example it is wlan0)
-
-```bash
-nmcli connection
-```
-
-Connect to a wifi network
-
-```bash
-nmcli device wifi connect wlan0 password <yourpassword>
-```
-
-More info see in [wiki](https://wiki.archlinux.org/index.php/NetworkManager "NM archwiki")
-
-### Set grub
-
-```bash
-pacman -S grub
-```
-
-Enable grub
-
-```bash
-grub-install --target=i386-pc /dev/nvme0n1
-```
-
-Create config file for grub
-
-```bash
-grub-mkconfig -o /boot/grub/grun.cfg
-```
-
-### Set root password
-
-```bash
-passwd <yourpassword>
+hwclock --systohc
 ```
 
 ### Generate local
@@ -344,24 +306,61 @@ Set (wright in file) language in:
 vim /etc/locale.conf
 LANG=en_US.UTF-8
 ```
+### Add hosts
 
-### Set time zone
-
-```bash
-ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-```
-
-### Generate time
-
-```bash
-hwclock --systohc
-```
-
-### Wright your hostname in file:
+Wright your hostname in file:
 
 ```bash
 vim /etc/hostname
 ```
+
+Add matching entries to hosts
+
+```bash
+vim /etc/hosts
+```
+
+put the followimg in file:
+
+```bash
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   <hostname>.localdomine <hostname>
+```
+
+### Set root password
+
+```bash
+passwd
+> yourpassword
+```
+### set color in pacman
+
+```bash
+vim /etc/pacman.conf
+# uncoment these lines:
+#Color
+#VerbosePkgLists
+```
+
+### Set grub
+
+```bash
+pacman -S grub                              # install grub
+grub-install --target=i386-pc /dev/nvme0n1  # Enable grub
+grub-mkconfig -o /boot/grub/grub.cfg        # Create config file for grub
+```
+
+### Set Network Manager
+
+```bash
+pacman -S networkmanager         # install NM
+systemctl enable NetworkManager  # Enable Network Manager
+nmcli connection show            # Show connections
+nmcli device wifi connect <SSID or BSSID> password <yourpassword>  # Connect to a wifi network
+```
+
+More info see in [wiki](https://wiki.archlinux.org/index.php/NetworkManager "NM archwiki")
 
 ### Exit from root and unmount USB
 
@@ -378,30 +377,17 @@ reboot
 
 ### Check internet cinnection.
 
-If not - execute clause "Check internet connection" above and then make NM tuning for wifi:
-
-disable dhcpcd on ethernet
-
 ```bash
-sudo systemctl disable dhcpcd@enp8s0.service
+ping -c 3 archlinux.org
+# If not, execute:
+nmcli device wifi connect <SSID or BSSID> password <yourpassword>  # Connect to a wifi network
+# or make NM tuning for wifi (see below)
 ```
 
-disable netctl on wifi
+### Correct mirror list (put Russia first)
 
 ```bash
-sudo systemctl disable netctl-auto@wlan0.service
-```
-
-enable NM
-
-```bash
-sudo systemctl enable NetworkManager.service
-```
-
-reboot
-
-```bash
-reboot
+sudo vim /etc/pacman.d/mirrorlist
 ```
 
 ### Update & upgrade system
@@ -421,13 +407,14 @@ useradd -m <nameofuser>
 Add password for new user
 
 ```bash
-passwd <nameofuser> <password>
+passwd <nameofuser>
+> password
 ```
 
 Add user to groups
 
 ```bash
-usermod -aG wheel,audio,video,optical,storage,<nameofuser>
+usermod -aG wheel,audio,video,optical,storage <nameofuser>
 ```
 
 Check user's groups
@@ -436,23 +423,23 @@ Check user's groups
 groups <nameofuser>
 ```
 
-Open sudoers file (/etc/sudoers) and uncomment wheel group
+Open sudoers file `/etc/sudoers` and uncomment wheel group line `# %wheel ALL=(ALL) ALL`
 
 ```bash
-visudo
+vim /etc/sudoers
 ```
 
 ### Install xorg and video drivers
 
 ```bash
-sudo pacman -S xorg xorg-xinit xsorg-server xorg-drivers xorg-xmodmap
-xterm xcb-util-cursor
+sudo pacman -S xorg xorg-xinit xterm
 ```
 
-show mod keys (work only if WM starts):
+Copy `.xinitrc` to `home` directory, see instructions in
+[wiki](https://wiki.archlinux.org/index.php/Xinit "xinit archwiki")
 
 ```bash
-xmodmap -pm
+cp /etc/X11/xinit/xinitrc /home/nils/.xinitrc
 ```
 
 Check your video card (here I have nvidia and I will use proprietary driver)
@@ -496,17 +483,18 @@ exit
 ### Install WM (qtile and additional packages for it)
 
 ```bash
-sudo pacman -S qtile alacritty dmenu python-psutil python-iwlib
-python-keyring python-dateutil python-pyxdg python-mpd2
+sudo pacman -S qtile python-pip python-setuptools
+
+# probably you will also need the following pakages: python-psutil
+python-iwlib python-keyring python-dateutil python-pyxdg python-mpd2
 ```
 
-Copy `.xinitrc` to `home` directory, see instructions in
-[wiki](https://wiki.archlinux.org/index.php/Xinit "xinit archwiki")
+Put the following line in `.xinitrc`
 
-Put the following line in .xinitrc
+```
+# comment lines from "twm..." to "exec xterm..." and put below:
 
-```bash
-exec qtile
+exec qtile start
 ```
 
 Start qtile from tty by command:
@@ -515,33 +503,46 @@ Start qtile from tty by command:
 xinit
 ```
 
+show mod keys (work only if WM starts):
+
+```bash
+xmodmap -pm
+```
+
+### Install fonts
+
+```bash
+sudo pacman -S ttf-jetbrains-mono
+```
+
+plus `ttf-linux-libertine` or: `noto-fonts`
+
 ### Install additional important packages
 
 ```bash
-sudo pacman -S git openssh gnupg pass rsync veracrypt
+sudo pacman -S alacritty git openssh gnupg pass rsync veracrypt stow firefox
+mc
 ```
 
 packages description:
 
+* alacritty  --> terminal emulator
 * git        --> distributed version control system
 * openssh    --> tool for remote login with the SSH protocol
 * gnupg      --> complete and free implementation of the OpenPGP standard
 * pass       --> password manager
 * rsync      --> file copying tool for remote and local files
 * veracrypt  --> disk encryption
+* stow       --> Manage installation of multiple softwares in the same directory tree
+* firefox    --> internet browser
+* tldr       --> Command line client for tldr, a collection of simplified and community-driven man pages
+* mc         --> file manager
 
-### Install fonts
-
-```bash
-sudo pacman -S ttf-inconsolata ttf-jetbrains-mono
-```
-
-plus `ttf-linux-libertine` or: `noto-fonts`
 
 ### Install audio packages
 
 ```bash
-sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils
+sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils tldr
 ```
 
 Set up sound, instructions see in
@@ -550,22 +551,20 @@ Set up sound, instructions see in
 ### Install workflow packages
 
 ```bash
-sudo pacman -S figlet mutt firefox udisks2 pycharm-community-edition moc
-htop mc calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
+sudo pacman -S figlet mutt udisks2 pycharm-community-edition moc
+htop calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
 pacman-contrib github-cli newsboat perl-image-exiftool calibre mpv krita
-gimp tldr pandoc texlive-most texlive-lang biber
+gimp pandoc texlive-most texlive-lang biber
 ```
 
 packages description:
 
 * figlet                    --> display large letters out of text
 * mutt                      --> email client
-* firefox                   --> internet browser
 * udisks2                   --> to query and manipulate storage devices
 * pycharm-community-edition --> python ide
 * moc                       --> audio player
 * htop                      --> interactive process viewer
-* mc                        --> file manager
 * calcurse                  --> todo manager
 * sxiv                      --> lightweight and scriptable image viewer
 * zathura                   --> document viewer PDF, PS, DjVu
@@ -581,13 +580,11 @@ packages description:
 * ffmoeg                    --> Complete solution to record, convert and stream audio and video
 * krita                     --> edit and paint images
 * gimp                      --> GNU Image Manipulation Program
-* tldr                      --> Command line client for tldr, a collection of simplified and community-driven man pages
 * pandoc                    --> Conversion between markup formats
 * texlive-most              --> group contains most TeX Live packages
 * texlive-lang              --> group contains packages providing character sets and features for languages with non-latin characters
 * biber                     --> A Unicode-capable BibTeX replacement for biblatex users
 * lynx                      --> A text browser for the World Wide Web
-* stow                      --> Manage installation of multiple softwares in the same directory tree
 
 ### Set defolt programms
 
@@ -598,9 +595,17 @@ export EDITOR="vim"
 export BROWSER="firefox"
 ```
 
+### Turn off PC:
+
+```bash
+sudo shutdown -h now
+```
+
 ---
 
-Create RU keyboard layout:
+## Misc
+
+### Create RU keyboard layout
 
 For using `Shift + Ctrl` for US-RU change:
 
@@ -610,9 +615,7 @@ localectl --no-convert set-x11-keymap us,ru "" "" grp:ctrl_shift_toggle
 
 Restart xinit
 
----
-
-STEAM installation.
+### STEAM installation.
 
 All instructions see in [wiki](https://wiki.archlinux.org/index.php/Steam "steam archwiki")
 
@@ -651,23 +654,11 @@ install steam
 sudo pacman -S steam
 ```
 
----
-
-Turn off PC:
-
-```bash
-sudo shutdown -h now
-```
-
----
-
-Emergency action:
+### Emergency action:
 
 `Ctrl + Alt + F2` or `F3` or `F4` etc --> Open new tty session
 
----
-
-MOUNT USB
+### MOUNT USB
 
 Finde a name of USB device (for example it is sda)
 
@@ -711,9 +702,7 @@ Unmount USB
 sudo umount /mnt/usbstick
 ```
 
----
-
-PACMAN
+### PACMAN
 
 Uncomment Color and VerbosePkgLists lines in file:
 
@@ -774,7 +763,9 @@ sudo pacman -Rns $(pacman -Qtdq)
 
 ---
 
-УСТАНОВКА РУССКОГО ЯЗЫКА (RALT --> ENG, Shift + RALT --> RUS)
+### УСТАНОВКА РУССКОГО ЯЗЫКА
+
+(RALT --> ENG, Shift + RALT --> RUS)
 
 Check keyboard settigs on the your computer:
 
@@ -810,6 +801,34 @@ xkbcomp $HOME/.config/xkb/config $DISPLAY
 ```
 
 source finde [here](https://m.habr.com/ru/post/486872/ "instructions")
+
+---
+
+### NM tuning for wifi
+
+disable dhcpcd on ethernet
+
+```bash
+sudo systemctl disable dhcpcd@enp8s0.service
+```
+
+disable netctl on wifi
+
+```bash
+sudo systemctl disable netctl-auto@wlan0.service
+```
+
+enable NM
+
+```bash
+sudo systemctl enable NetworkManager.service
+```
+
+reboot
+
+```bash
+reboot
+```
 
 ---
 

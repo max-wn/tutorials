@@ -11,22 +11,24 @@ weight:
 rsync -avz ./src /dest   # syncing folder src into dest:
 rsync -avz ./src/ /dest  # syncing the content of src into dest:
 
-# syncing the content of src into dest dir (example):
-sudo rsync -aAXv --delete \
+# syncing the content of src into dest dir (examples):
+sudo rsync -aAXvzP --delete \
     ~/name_of_user/documents_1/ /media/name_of_user/USB_8GB/docs1_backup/
-sudo rsync -aAXv --delete \
+sudo rsync -aAXvzP --delete \
     ~/name_of_user/documents_2/ /media/name_of_user/WD_Passport/docs2_backup/
+rsync -rtvzP /path/to/file root@example.org:/path/on/the/server
 
     -a  # archive (-rlptgoD)
     -A  # preserve ACLs (implies --perms)
     -X  # preserve extended attributes
-    -v  # verbose
     -r  # recursive
+    -t  # transfer modification times, which allows skipping files that have not been modified on future uploads
+    -v  # verbose
+    -z  # compress file data during the transfer and decompress on destination
     -P  # same as --partial --progress
     -x  # this tells rsync to avoid crossing a filesystem boundary when recursing
     -R  # use relative paths
     -S  # try to handle sparse files efficiently so they take up less space on the destination
-    -z  #  compress file data during the transfer and decompress on destination
     -u  # skip files that are newer on the receiver
     -m  # prune empty directory chains from file-list
     --delete            # this tells rsync to delete extraneous files from the receiving side (ones that aren't on the sending side)

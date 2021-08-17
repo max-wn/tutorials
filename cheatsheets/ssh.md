@@ -1,5 +1,5 @@
 ---
-title: Mutt
+title: SSH
 category: cli
 layout:
 updated:
@@ -14,6 +14,10 @@ ssh-keygen                            # Generate a key interactively
 ssh-keygen -f ~/.ssh/filename         # Specify file in which to save the key
 ssh-keygen -t ed25519 -a 100          # Generate an ed25519 key with 100 key derivation function rounds
 ssh-keygen -t rsa -b 4096 -C "email"  # Generate an RSA 4096 bit key with email as a comment
+```
+
+```bash
+ssh-keygen -lf .ssh/id_ed25519.pub  # show key fingerprint
 ```
 
 Remove and retrieve keys
