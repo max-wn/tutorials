@@ -148,6 +148,12 @@ Misc
     git config set commit.gpgsign true                # Sign commits by default
     git commit -m "Implement feature Y" --no-gpg-sign # Do not sign
 
+
+To configure your Git client to sign commits by default for a local
+repository, in Git versions 2.0.0 and above, run `git config commit.gpgsign
+true`. To sign all commits by default in any local repository on your computer,
+run `git config --global commit.gpgsign true`.
+
 ---
 
 THE END
