@@ -521,7 +521,7 @@ plus `ttf-linux-libertine` or: `noto-fonts`
 
 ```bash
 sudo pacman -S alacritty git openssh gnupg pass rsync veracrypt stow firefox
-mc
+mc xclip
 ```
 
 packages description:
@@ -537,7 +537,16 @@ packages description:
 * firefox    --> internet browser
 * tldr       --> Command line client for tldr, a collection of simplified and community-driven man pages
 * mc         --> file manager
+* xclip      --> Command line interface to the X11 clipboard
 
+### Set defolt programms
+
+put in file `vim ~/.bash_profile`
+
+```bash
+export EDITOR="vim"
+export BROWSER="firefox"
+```
 
 ### Install audio packages
 
@@ -585,15 +594,6 @@ packages description:
 * texlive-lang              --> group contains packages providing character sets and features for languages with non-latin characters
 * biber                     --> A Unicode-capable BibTeX replacement for biblatex users
 * lynx                      --> A text browser for the World Wide Web
-
-### Set defolt programms
-
-put in file `vim ~/.bash_profile`
-
-```bash
-export EDITOR="vim"
-export BROWSER="firefox"
-```
 
 ### Turn off PC:
 
@@ -660,22 +660,10 @@ sudo pacman -S steam
 
 ### MOUNT USB
 
-Finde a name of USB device (for example it is sda)
-
-```bash
-sudo fdisk -l
-```
-
 Create directory for USB
 
 ```bash
 mkdir /mnt/usbstick
-```
-
-Mount USB
-
-```bash
-sudo mount /dev/sda /mnt/usbstick
 ```
 
 Give a group to usbstick directory
@@ -690,10 +678,24 @@ Give a right to usbstick directory
 sudo chmod g+w /mnt/usbstick
 ```
 
+Plug USB devise
+
+Finde a name of USB device (for example it is sda)
+
+```bash
+sudo fdisk -l
+```
+
 See what is mounted
 
 ```bash
 blkid -o list -c /dev/null
+```
+
+Mount USB
+
+```bash
+sudo mount /dev/sda /mnt/usbstick
 ```
 
 Unmount USB
