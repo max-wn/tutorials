@@ -551,18 +551,37 @@ export BROWSER="firefox"
 ### Install audio packages
 
 ```bash
-sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils tldr
+sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils
 ```
+
+package description:
+
+* pulseaudio       --> A featureful, general-purpose sound server
+* pulseaudio-alsa  --> ALSA Configuration for PulseAudio
+* alsa-utils       --> Advanced Linux Sound Architecture - Utilities
+* ! ??? ! alsa-lib         --> An alternative implementation of Linux sound support
 
 Set up sound, instructions see in
 [wiki](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture "alsamixer archwiki")
+
+### Install video packages
+
+```bash
+sudo pacman -S mpv youtube-dl
+```
+
+packages description:
+
+* mpv         --> video player
+* youtube-dl  --> A command-line program to download videos from YouTube.com
+  and a few more sites
 
 ### Install workflow packages
 
 ```bash
 sudo pacman -S figlet mutt udisks2 pycharm-community-edition moc
 htop calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
-pacman-contrib github-cli newsboat perl-image-exiftool calibre mpv krita
+pacman-contrib github-cli newsboat perl-image-exiftool calibre krita
 gimp pandoc texlive-most texlive-lang biber
 ```
 
@@ -584,8 +603,6 @@ packages description:
 * newsboat                  --> rss feed
 * perl-image-exiftool       --> Reader and rewriter of EXIF informations that supports raw files
 * calibre                   --> e-book management application
-* mpv                       --> video player
-* youtube-dl                --> A command-line program to download videos from YouTube.com and a few more sites
 * ffmoeg                    --> Complete solution to record, convert and stream audio and video
 * krita                     --> edit and paint images
 * gimp                      --> GNU Image Manipulation Program
