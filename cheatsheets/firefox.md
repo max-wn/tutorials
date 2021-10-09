@@ -12,6 +12,8 @@ updated:
    Protection
 4. in new tab open `about:config` and set the following
 
+from [this source][001]
+
 ```
 identity.fxaccounts.enabled = false
 dom.event.clipboardevents.enabled = false
@@ -28,6 +30,8 @@ privacy.trackingprotection.enabled = true
 webgl.disabled =  true
 ```
 
+from [this source][004]
+
 ```
 browser.display.use_document_fonts = 0        # disable fonts fingerprint
 dom.storage.enabled  = false                  # disable unic ID for browser
@@ -38,11 +42,20 @@ browser.safebrowsing.enabled = false          # to disable the transmission of i
 browser.safebrowsing.malware.enabled = false  # to disable the transmission of information about visited sites
 ```
 
+from [this source][003]
+
+```
+security.ssl3.rsa_des_ede3_sha = false        # exclude weak encryption sceam
+security.ssl.require_safe_negotiation = true  #
+```
+
 5. to copy and backup your profiles open `about:profiles` in new tab
 
 [001]: https://www.youtube.com/watch?v=NH4DdXC0RFw "SK firefox security guide"
 [002]: https://www.youtube.com/watch?v=tQhWdsFMc24&list=WL&index=2 "THO
 Firefox security guide"
+[003]: https://www.youtube.com/watch?v=dwZpjKH8nbo "MO firefox security guide"
+[004]: https://am.news/worlds/anonymous.pdf "Anonhandbook"
 
 ---
 
