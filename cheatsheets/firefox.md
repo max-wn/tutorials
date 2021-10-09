@@ -12,7 +12,7 @@ updated:
    Protection
 4. in new tab open `about:config` and set the following
 
-from [this source][001]
+* from [this source][001]
 
 ```
 identity.fxaccounts.enabled = false
@@ -30,7 +30,7 @@ privacy.trackingprotection.enabled = true
 webgl.disabled =  true
 ```
 
-from [this source][004]
+* from [this source][004]
 
 ```
 browser.display.use_document_fonts = 0        # disable fonts fingerprint
@@ -42,7 +42,7 @@ browser.safebrowsing.enabled = false          # to disable the transmission of i
 browser.safebrowsing.malware.enabled = false  # to disable the transmission of information about visited sites
 ```
 
-from [this source][003]
+* from [this source][003]
 
 ```
 security.ssl3.rsa_des_ede3_sha = false        # exclude weak encryption sceam
