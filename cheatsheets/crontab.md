@@ -1,7 +1,7 @@
 ---
 title: Cron
 category: CLI
-layout:
+tags:
 updated:
 ---
 

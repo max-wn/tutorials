@@ -1,7 +1,7 @@
 ---
 title: Git tricks
 category: Git
-layout:
+tags:
 updated:
 ---
 
