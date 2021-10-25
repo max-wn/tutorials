@@ -1,7 +1,7 @@
 ---
 title: Git basis
 category: Git
-layout:
+tags:
 updated:
 ---
 
@@ -67,6 +67,15 @@ git reset --hard HEAD~2  # delete all version 2 commits back
 git reset --soft HEAD~2  # delete all commit log 2 commits back
 git reset [file]         # remove from the done position
 ```
+
+## 5 tips, for public and private projects / repositories (repos)
+
+1. Pull Request review (PR) code suggestion
+2. Repository project board (like Trello / Jira but better)
+3. Repository wiki (is a git repository)
+4. GitHub sponsor open source contributors (they get 100% of everything)
+5. GitHub Learning Labs (courses that  have integrate super well with GitHub,
+   no coding required)
 
 ---
 

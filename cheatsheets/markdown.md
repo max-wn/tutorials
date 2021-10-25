@@ -1,12 +1,18 @@
 ---
 title: Markdown
 category: Markup
-layout: 2017/sheet
-prism_languages: [markdown]
-updated:
+layout:
+languages: [markdown]
 ---
 
-## Reference
+### References
+
+This Markdown cheat sheet provides a quick overview of all the Markdown syntax
+elements. It can’t cover every edge case, so if you need more information
+about any of these elements, refer to the reference guides for
+[basic syntax](https://www.markdownguide.org/basic-syntax)
+and
+[extended syntax](https://www.markdownguide.org/extended-syntax).
 
 ### Headers
 
@@ -76,19 +82,28 @@ ___bold italic___
 2. Item 2
 ```
 
+### Definition List
+
+term
+: definition
+
+### Strikethrough
+
+~~The world is flat.~~
+
 ### Links
 
 ```markdown
-[link](http://google.com)
+[title](https://archlinux.org)
 ```
 
 ```markdown
-[link][google]
-[google]: http://google.com
+[title][archlinux]
+[archlinux]: https://archlinux.org
 ```
 
 ```markdown
-<http://google.com>
+<https://archlinux.org>
 ```
 
 ### Images
@@ -110,18 +125,13 @@ ___bold italic___
     makes a code block
 ```
 
-~~~markdown
 ```
 code fences
 ```
-~~~
 
-
-~~~markdown
 ```js
 codeFences.withLanguage()
 ```
-~~~
 
 ### Blockquotes
 
@@ -156,6 +166,16 @@ Column 1 Heading | Column 2 Heading
 --- | ---
 Some content | Other content
 ```
+
+### Footnote
+
+Here's a sentence with a footnote. [^1]
+
+[^1]: This is the footnote.
+
+### Heading ID
+
+### My Great Heading {#custom-id}
 
 ---
 

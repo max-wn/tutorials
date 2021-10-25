@@ -521,7 +521,7 @@ plus `ttf-linux-libertine` or: `noto-fonts`
 
 ```bash
 sudo pacman -S alacritty git openssh gnupg pass rsync veracrypt stow firefox
-mc
+mc xclip
 ```
 
 packages description:
@@ -537,23 +537,51 @@ packages description:
 * firefox    --> internet browser
 * tldr       --> Command line client for tldr, a collection of simplified and community-driven man pages
 * mc         --> file manager
+* xclip      --> Command line interface to the X11 clipboard
 
+### Set defolt programms
+
+put in file `vim ~/.bash_profile`
+
+```bash
+export EDITOR="vim"
+export BROWSER="firefox"
+```
 
 ### Install audio packages
 
 ```bash
-sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils tldr
+sudo pacman -S pulseaudio pulseaudio-alsa alsa-lib alsa-utils
 ```
+
+package description:
+
+* pulseaudio       --> A featureful, general-purpose sound server
+* pulseaudio-alsa  --> ALSA Configuration for PulseAudio
+* alsa-utils       --> Advanced Linux Sound Architecture - Utilities
+* ! ??? ! alsa-lib         --> An alternative implementation of Linux sound support
 
 Set up sound, instructions see in
 [wiki](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture "alsamixer archwiki")
+
+### Install video packages
+
+```bash
+sudo pacman -S mpv youtube-dl
+```
+
+packages description:
+
+* mpv         --> video player
+* youtube-dl  --> A command-line program to download videos from YouTube.com
+  and a few more sites
 
 ### Install workflow packages
 
 ```bash
 sudo pacman -S figlet mutt udisks2 pycharm-community-edition moc
 htop calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
-pacman-contrib github-cli newsboat perl-image-exiftool calibre mpv krita
+pacman-contrib github-cli newsboat perl-image-exiftool calibre krita
 gimp pandoc texlive-most texlive-lang biber
 ```
 
@@ -575,8 +603,6 @@ packages description:
 * newsboat                  --> rss feed
 * perl-image-exiftool       --> Reader and rewriter of EXIF informations that supports raw files
 * calibre                   --> e-book management application
-* mpv                       --> video player
-* youtube-dl                --> A command-line program to download videos from YouTube.com and a few more sites
 * ffmoeg                    --> Complete solution to record, convert and stream audio and video
 * krita                     --> edit and paint images
 * gimp                      --> GNU Image Manipulation Program
@@ -585,15 +611,6 @@ packages description:
 * texlive-lang              --> group contains packages providing character sets and features for languages with non-latin characters
 * biber                     --> A Unicode-capable BibTeX replacement for biblatex users
 * lynx                      --> A text browser for the World Wide Web
-
-### Set defolt programms
-
-put in file `vim ~/.bash_profile`
-
-```bash
-export EDITOR="vim"
-export BROWSER="firefox"
-```
 
 ### Turn off PC:
 
@@ -660,22 +677,10 @@ sudo pacman -S steam
 
 ### MOUNT USB
 
-Finde a name of USB device (for example it is sda)
-
-```bash
-sudo fdisk -l
-```
-
 Create directory for USB
 
 ```bash
 mkdir /mnt/usbstick
-```
-
-Mount USB
-
-```bash
-sudo mount /dev/sda /mnt/usbstick
 ```
 
 Give a group to usbstick directory
@@ -690,10 +695,24 @@ Give a right to usbstick directory
 sudo chmod g+w /mnt/usbstick
 ```
 
+Plug USB devise
+
+Finde a name of USB device (for example it is sda)
+
+```bash
+sudo fdisk -l
+```
+
 See what is mounted
 
 ```bash
 blkid -o list -c /dev/null
+```
+
+Mount USB
+
+```bash
+sudo mount /dev/sda /mnt/usbstick
 ```
 
 Unmount USB

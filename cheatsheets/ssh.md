@@ -1,7 +1,7 @@
 ---
 title: SSH
 category: cli
-layout:
+tags:
 updated:
 ---
 
