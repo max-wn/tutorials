@@ -1,9 +1,6 @@
----
-title: moc
-category: music
-layout:
-updated:
----
+## moc cheatsheet
+
+### basis
 
 To use config and keymap files, copy them to (for Linux):
 

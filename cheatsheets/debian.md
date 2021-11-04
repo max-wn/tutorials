@@ -1,9 +1,6 @@
----
-title: Debian
-category: linux
-layout:
-updated:
----
+## debian cheatsheet
+
+### basis
 
 создать резервную копию существующего файла _sources.list_
 
@@ -51,7 +48,7 @@ set swappiness parametr in file
 
 `vm.swappiness = 10`
 
-## just for steam
+### just for steam
 
 You might need to specify the right command for games inside Steam.
 
@@ -63,27 +60,27 @@ Properties.
 3. Save your changes.
 4. If this doesn't work, try `primusrun` instead of `optirun`.
 
-## python
+### python
 
 ```bash
-sudo apt install python3-pip  # install _pip3_
+sudo apt install python3-pip  # install pip3
 ```
 
-## jetbrains
+### jetbrains
 
 ```bash
 sudo tar -xzf jetbrains-toolbox-1.16.6319.tar.gz -C /opt  # unpack file "jetbrains-toolbox-1.16.6319.tar.gz"
 ./jetbrains-toolbox                                       # run the file "jetbrains-toolbox"
 ```
 
-## checkio
+### checkio
 
 ```bash
 sudo pip3 install checkio_client  # install checkio
 checkio config                    # config checkio
 ```
 
-## terminal
+### terminal
 
 check for utf-8
 

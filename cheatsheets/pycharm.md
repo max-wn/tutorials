@@ -1,11 +1,6 @@
----
-title: PyCharm
-category: GUI
-tags:
-updated:
----
+## PyCharm cheatsheet
 
-# keybindings
+### keybindings
 
 command | description
 --- | ---

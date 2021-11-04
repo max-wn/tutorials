@@ -1,11 +1,4 @@
----
-title: Git branches
-category: Git
-layout:
-updated:
----
-
-## Working with branches
+## git cheatsheet - working with branches
 
 ### Creating
 

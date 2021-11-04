@@ -1,9 +1,6 @@
----
-title: pip
-category: python
-layout:
-updated:
----
+## pip cheatsheet
+
+### basis
 
 ```bash
 pip3 install colorama            # Команда для установки colorama

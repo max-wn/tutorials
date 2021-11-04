@@ -1,9 +1,4 @@
----
-title: homebrew
-category: macos
-layout:
-updated:
----
+## homebrew cheatsheet
 
 ### Commands
 
@@ -49,7 +44,7 @@ updated:
 
 Cask commands are used for interacting with graphical applications.
 
-## uninstall
+### uninstall
 
 Uninstall formulae that were only installed as
 a dependency of another formula and are now no longer needed.
@@ -72,7 +67,7 @@ brew uninstall, rm, remove [options] formula|cask  # Uninstall a formula or cask
     --cask  # Treat all named arguments as casks.
 ```
 
-## Also see
+### Also see
 
 * [Homebrew homepage](https://brew.sh/) _brew.sh_
 * [Homebrew docs](https://docs.brew.sh) _docs.brew.sh_

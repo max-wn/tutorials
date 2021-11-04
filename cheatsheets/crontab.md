@@ -1,9 +1,4 @@
----
-title: Cron
-category: CLI
-tags:
-updated:
----
+## crontab cheatsheet
 
 ### Format
 

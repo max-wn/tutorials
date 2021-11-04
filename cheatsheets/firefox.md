@@ -1,9 +1,6 @@
----
-title: firefox advanced security settings
-category: pivacy
-layout:
-updated:
----
+## firefox cheatsheet
+
+### firefox advanced security settings
 
 1. make sure you are running the latest version of Firefox
 2. make sure you configured Firefox for privacy using [SK video][001] and/or

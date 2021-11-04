@@ -1,12 +1,4 @@
----
-title: Pass
-category: CLI
-layout:
-updated:
----
-
-Reference
----------
+## pass cheatseet
 
 ### Create
 
@@ -57,7 +49,7 @@ pass git push
 pass git pull
 ```
 
-## References
+### References
 
 * <https://passwordstore.org>
 

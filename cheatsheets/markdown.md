@@ -1,9 +1,4 @@
----
-title: Markdown
-category: Markup
-layout:
-languages: [markdown]
----
+## markdown cheatsheet
 
 ### References
 

@@ -1,8 +1,4 @@
----
-title: git log
-category: Git
-layout:
----
+## git cheatsheet - git log
 
 ### Revision ranges
 
@@ -104,7 +100,7 @@ git log -- app/file.rb          # only file
 
 See: [Git log format cheatsheet](./git-log-format.md)
 
-## Also see
+### Also see
 
 - [Git log format cheatsheet](./git-log-format.md)
 
