@@ -1,4 +1,8 @@
-## files locations
+## cataclism dda tutorial
+
+### files locations
+
+#### macos
 
 1. soundtrack location
 
@@ -12,7 +16,25 @@
 
 `~/Library/Application Support/Cataclysm`
 
-## Instructions
+#### linux
+
+1. soundtrack location
+
+`/usr/share/cataclysm-dda/sound`
+
+2. save file location
+
+`~/.local/share/cataclysm-dda/save`
+
+3. config files location
+
+`???`
+
+4. tiles location
+
+`/usr/share/cataclysm-dda/gtx`
+
+### instructions (example for windows)
 
 1. Игру **Cataclysm-DDA** скачай из [Lat-release-website][001] or
    [Lat-relese-github][002] or [Pre-release][003]
@@ -33,7 +55,7 @@
 
 6. Игру `cataclysm-tiles.exe` запусти
 
-7. Настройки
+### Настройки
 
 `Shift+T Enter [Общие]`
 
