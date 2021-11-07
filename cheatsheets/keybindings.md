@@ -1,9 +1,4 @@
----
-title: my keybindings
-category:
-layout:
-updated:
----
+## my keybindings
 
 The `MODKEY` is set to the (`Mod4`), this is `Super key` (aka the `Windows
 key`). I try to keep the keybindings consistent with all of my programms.

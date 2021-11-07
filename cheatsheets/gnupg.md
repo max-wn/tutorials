@@ -1,9 +1,4 @@
----
-title: GnuPG
-category: CLI
-tags:
-updated:
----
+## gnupg cheatsheet
 
 ### References:
 
@@ -21,10 +16,9 @@ purposes and should not be changed. In case this directory or any file inside
 it does not follow this security measure, you will get warnings about unsafe
 file and home directory permissions.
 
-Basics
----------------
+### Basics
 
-### Exporting keys
+#### Exporting keys
 
 ```bash
 gpg -o key.gpg --export <KEY ID>
@@ -38,7 +32,7 @@ gpg -o key.asc --armor --export <KEY ID>
 
 __Note:__ Omitting the `-o|--output` option will print the key to `stdout`.
 
-### Importing keys
+#### Importing keys
 
 ```bash
 gpg --import key.gpg
@@ -51,7 +45,7 @@ Only merge updates for keys already in key-ring:
 gpg --import key.asc --merge-options merge-only
 ```
 
-### Managing your keyring
+#### Managing your keyring
 
 Generate a new key:
 
@@ -77,7 +71,7 @@ gpg --list-secret-keys
 gpg --list-secret-keys --keyid-format LONG
 ```
 
-### Using a keyserver
+#### Using a keyserver
 
 Import keys from keyserver:
 
@@ -109,7 +103,7 @@ Override keyserver from `~/.gnupg/gpg.conf`
 gpg --keyserver <URL> ...
 ```
 
-### Trusting a key
+#### Trusting a key
 
 ```bash
 gpg --edit-key <KEY ID>
@@ -121,10 +115,9 @@ gpg> save
 __NOTE:__ You can use the owner's email or name (or part thereof) instead of the key ID for `--edit-key`
 
 
-Encrypting
----------
+### Encrypting
 
-### Public key encryption
+#### Public key encryption
 This will produce an encrypted file, `secret.txt.gpg`, that can only be decrypted by the recipient:
 
 ```bash
@@ -147,7 +140,7 @@ gpg -e -r <RECIPIENT> -r <ANOTHER RECIPIENT> ... secret.txt
 
 __NOTE__: Omitting `-o|--output` will produce an encrypted file named `<ORIGINAL FILENAME>.gpg` by default.
 
-### Symmetric encryption
+#### Symmetric encryption
 
 Encrypt file using a shared key. You will be prompted for a passphrase.
 
@@ -157,10 +150,9 @@ gpg --symmetric secret.txt
 gpg -c secret.txt
 ```
 
-Decrypting
----------
+### Decrypting
 
-### Decrypting a file
+#### Decrypting a file
 
 ```bash
 gpg -d -o secret.txt secret.txt.gpg
@@ -170,10 +162,9 @@ If the file is encrypted via symmetric encryption, you will be prompted for the 
 
 __NOTE__: Omitting `-o|--output` will print the unencrypted contents to `stdout`
 
-Signing & Verifying
----------
+### Signing & Verifying
 
-### Signing
+#### Signing
 
 ```bash
 gpg -o signed-file.txt.gpg -s file.txt
@@ -186,22 +177,21 @@ gpg -s -o secret.txt.gpg \
   -r <RECIPIENT> secret.txt
 ```
 
-### Verifying a signature
+#### Verifying a signature
 
 ```bash
 gpg --verify file.txt.gpg
 ```
 
-### Viewing content of signed file
+#### Viewing content of signed file
 
 ```bash
 gpg -d signed-file.txt.gpg
 ```
 
-Miscellaneous
-----------
+### Miscellaneous
 
-### Components
+#### Components
 
 List all components:
 
@@ -220,7 +210,7 @@ Kill all components:
 gpgconf --kill all
 ```
 
-### Parsing keyring data
+#### Parsing keyring data
 
 Use `--with-colons` to produce an output that can easily be parsed i.e. with `awk`, `grep`. Fields are colon-separated.
 

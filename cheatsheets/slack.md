@@ -1,9 +1,6 @@
----
-title: slack
-category:
-layout:
-updated:
----
+## slack cheatsheet
+
+### basis
 
 use this command in Slack to start receiving updates about that project:
 

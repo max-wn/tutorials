@@ -1,9 +1,4 @@
----
-title: Arch Linux installation guide
-category: linux
-layout:
-updated: 15.08.2021
----
+# Arch Linux installation guide
 
 ## download arch iso
 
@@ -576,13 +571,15 @@ packages description:
 * youtube-dl  --> A command-line program to download videos from YouTube.com
   and a few more sites
 
+---
+
 ### Install workflow packages
 
 ```bash
 sudo pacman -S figlet mutt udisks2 pycharm-community-edition moc
 htop calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
-pacman-contrib github-cli newsboat perl-image-exiftool calibre krita
-gimp pandoc texlive-most texlive-lang biber
+pacman-contrib github-cli newsboat perl-image-exiftool calibre ffmpeg krita
+gimp pandoc texlive-most texlive-lang biber lynx
 ```
 
 packages description:
@@ -603,7 +600,7 @@ packages description:
 * newsboat                  --> rss feed
 * perl-image-exiftool       --> Reader and rewriter of EXIF informations that supports raw files
 * calibre                   --> e-book management application
-* ffmoeg                    --> Complete solution to record, convert and stream audio and video
+* ffmpeg                    --> Complete solution to record, convert and stream audio and video
 * krita                     --> edit and paint images
 * gimp                      --> GNU Image Manipulation Program
 * pandoc                    --> Conversion between markup formats

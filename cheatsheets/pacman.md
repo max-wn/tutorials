@@ -1,14 +1,8 @@
----
-title: Pacman
-category: Linux
-updated:
-intro: |
-  Pacman is the package manager for Arch linux and its derivatives.
----
+## pacman cheatsheet
 
-## Commands
+### Commands
 
-### Common commands
+#### Common commands
 
 | Command                 | Description                       |
 | ----------------------- | --------------------------------- |
@@ -18,7 +12,7 @@ intro: |
 | `pacman -Ss <keywords>` | Search                            |
 | `pacman -Syu`           | Upgrade everything                |
 
-### Query
+#### Query
 
 | Command              | Description                            |
 | -------------------- | -------------------------------------- |
@@ -31,7 +25,7 @@ intro: |
 | ---                  | ---                                    |
 | `pacman -Qs <query>` | Search installed packages for keywords |
 
-### Orphans
+#### Orphans
 
 | Command                       | Description                 |
 | ----------------------------- | --------------------------- |

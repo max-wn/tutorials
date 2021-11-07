@@ -1,17 +1,4 @@
----
-title: Git log format string
-category: Git
-layout:
-updated:
-weight:
-keywords:
-  - "git log --pretty=format:%H"
-  - "%H - Commit hash"
-  - "%an - Author"
-  - "%aD - Author date"
----
-
-## Log format
+## git cheatsheet - git log format
 
 ### Pretty format
 
@@ -55,25 +42,25 @@ See the next tables on format variables.
 | `%d` | ref names |
 | `%e` | encoding |
 
-## Author and committer
+### Author and committer
 
-### Author
+#### Author
 
-#### Name
+##### Name
 
 | Variable | Description |
 | --- | --- |
 | `%an` | author |
 | `%aN` | author, respecting mailmap |
 
-#### Email
+##### Email
 
 | Variable | Description |
 | --- | --- |
 | `%ae` | author email |
 | `%aE` | author email, respecting mailmap |
 
-#### Date
+##### Date
 
 | Variable | Description |
 | --- | --- |
@@ -82,23 +69,23 @@ See the next tables on format variables.
 | `%at` | author date (unix timestamp) |
 | `%ai` | author date (iso8601) |
 
-### Committer
+#### Committer
 
-#### Name
+##### Name
 
 | Variable | Description |
 | --- | --- |
 | `%cn` | committer name |
 | `%cN` | committer name, respecting mailmap |
 
-#### Email
+##### Email
 
 | Variable | Description |
 | --- | --- |
 | `%ce` | committer email |
 | `%cE` | committer email, respecting mailmap |
 
-#### Date
+##### Date
 
 | Variable | Description |
 | --- | --- |
@@ -107,7 +94,7 @@ See the next tables on format variables.
 | `%ct` | committer date (unix timestamp) |
 | `%ci` | committer date (iso8601) |
 
-## Also see
+### Also see
 
 - [Git log cheatsheet](./git-log.md)
 

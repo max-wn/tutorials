@@ -1,4 +1,4 @@
-# security advices
+## security advices
 
 You do know about the military data classification/clearance scheme, right?
 Data can be classified as
@@ -17,3 +17,7 @@ classified as top secret.  Users with a top secret clearance can read data
 classified as secret and top secret (as long as they have a need to know).
 This type of access control (called mandatory access control) is an important
 means of ensuring the confidentially and integrity of the data.
+
+---
+
+THE END

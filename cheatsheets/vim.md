@@ -1,19 +1,12 @@
----
-title: Vim
-category: Vim
-layout:
-tags:
-updated:
-weight:
-intro: |
- [Vim](http://www.vim.org/) is a very efficient text editor. This reference was made for Vim 8.0.
- For shortcut notation, see `:help key-notation`.
----
+## vim cheatsheet
 
-Getting started
----------------
+[Vim](http://www.vim.org/) is a very efficient text editor. This reference was made for Vim 8.0.
 
-### Exiting
+For shortcut notation, see `:help key-notation`.
+
+### Getting started
+
+#### Exiting
 
 | Shortcut       | Description                      |
 | -------------- | -------------------------------- |
@@ -29,7 +22,7 @@ Getting started
 | `ZZ`           | Save and quit                    |
 | `ZQ`           | Quit without checking changes    |
 
-### Navigating
+#### Navigating
 
 | Shortcut            | Description       |
 | ---                 | ---               |
@@ -37,14 +30,14 @@ Getting started
 | `<C-U>` _/_ `<C-D>` | Half-page up/down |
 | `<C-B>` _/_ `<C-F>` | Page up/down      |
 
-#### Words
+##### Words
 
 | Shortcut     | Description               |
 | ---          | ---                       |
 | `b` _/_ `w`  | Previous/next word        |
 | `ge` _/_ `e` | Previous/next end of word |
 
-#### Line
+##### Line
 
 | Shortcut     | Description                        |
 | ---          | ---                                |
@@ -52,12 +45,12 @@ Getting started
 | `^`          | Start of line _(after whitespace)_ |
 | `$`          | End of line                        |
 
-#### Character
+##### Character
 
 | `fc`  | Go forward to character `c`  |
 | `Fc`  | Go backward to character `c` |
 
-#### Document
+##### Document
 
 | Shortcut | Description    |
 | ---      | ---            |
@@ -66,7 +59,7 @@ Getting started
 | `:n`     | Go to line `n` |
 | `nG`     | Go to line `n` |
 
-#### Window
+##### Window
 
 | Shortcut | Description              |
 | ---      | ---                      |
@@ -77,7 +70,7 @@ Getting started
 | `M`      | Move to middle of screen |
 | `L`      | Move to bottom of screen |
 
-#### Search
+##### Search
 
 | Shortcut  | Description                         |
 | ---       | ---                                 |
@@ -86,7 +79,7 @@ Getting started
 | `*`       | Next whole word under cursor        |
 | `#`       | Previous whole word under cursor    |
 
-#### Tab pages
+##### Tab pages
 
 | Shortcut              | Description                     |
 | ---                   | ---                             |
@@ -99,7 +92,7 @@ Getting started
 | `:tabn    `           | Go to next tab                  |
 | `:tabp    `           | Go to previous tab              |
 
-### Editing
+#### Editing
 
 | Shortcut | Description                         |
 | ---      | ---                                 |
@@ -119,14 +112,14 @@ Getting started
 | `u`      | Undo changes                        |
 | `<C-R>`  | Redo changes                        |
 
-### Exiting insert mode
+#### Exiting insert mode
 
 | Shortcut          | Description |
 | ---               | ---         |
 | `Esc` _/_ `<C-[>` | Exit insert mode |
 | `<C-C>`           | Exit insert mode, and abort current command |
 
-### Clipboard
+#### Clipboard
 
 | Shortcut        | Description                 |
 | ---             | ---                         |
@@ -141,7 +134,7 @@ Getting started
 | `"*p` _/_ `"+p` | Paste from system clipboard |
 | `"*y` _/_ `"+y` | Paste to system clipboard   |
 
-### Visual mode
+#### Visual mode
 
 | Shortcut | Description             |
 | ---      | ---                     |
@@ -149,7 +142,7 @@ Getting started
 | `V`      | Enter visual line mode  |
 | `<C-V>`  | Enter visual block mode |
 
-#### In visual mode
+##### In visual mode
 
 | Shortcut    | Description             |
 | ---         | ---                     |
@@ -159,17 +152,16 @@ Getting started
 
 See [Operators](#operators) for other things you can do.
 
-Operators
----------
+### Operators
 
-### Usage
+#### Usage
 
 Operators let you operate in a range of text (defined by *motion*). These are performed in normal mode.
 
 | `d`      | `w`    |
 | Operator | Motion |
 
-### Operators list
+#### Operators list
 
 | Shortcut | Description                     |
 | ---      | ---                             |
@@ -189,7 +181,7 @@ Operators let you operate in a range of text (defined by *motion*). These are pe
 
 See `:help operator`
 
-### Examples
+#### Examples
 
 Combine operators with *motions* to use them.
 
@@ -204,17 +196,16 @@ Combine operators with *motions* to use them.
 
 See: `:help motion.txt`
 
-Text objects
-------------
+### Text objects
 
-### Usage
+#### Usage
 
 Text objects let you operate (with an *operator*) in or around text blocks (*objects*).
 
 | `v`      | `i`                  | `p`         |
 | Operator | [i]nside or [a]round | Text object |
 
-### Text objects
+#### Text objects
 
 | Shortcut               | Description           |
 | ---                    | ---                   |
@@ -229,7 +220,7 @@ Text objects let you operate (with an *operator*) in or around text blocks (*obj
 | `B`                    | A block in [{         |
 | `t`                    | A XML tag block       |
 
-### Examples
+#### Examples
 
 | Shortcut    | Description                        |
 | ---         | ---                                |
@@ -244,17 +235,16 @@ Text objects let you operate (with an *operator*) in or around text blocks (*obj
 
 See [Operators](#operators) for other things you can do.
 
-### Diff
+#### Diff
 
 | Shortcut                             | Description                              |
 | ---                                  | ---                                      |
 | `gvimdiff file1 file2 [file3]`       | See differences between files, in HMI    |
 
 
-Misc
-----
+### Misc
 
-### Folds
+#### Folds
 
 | Shortcut      | Description                  |
 | ---           | ---                          |
@@ -274,7 +264,7 @@ Misc
 
 Uppercase ones are recursive (eg, `zO` is open recursively).
 
-### Navigation
+#### Navigation
 
 | Shortcut            | Description                |
 | ---                 | ---                        |
@@ -285,7 +275,7 @@ Uppercase ones are recursive (eg, `zO` is open recursively).
 | `[m`                | Previous method start      |
 | `[M`                | Previous method end        |
 
-### Jumping
+#### Jumping
 
 | Shortcut | Description                  |
 | ---      | ---                          |
@@ -294,18 +284,18 @@ Uppercase ones are recursive (eg, `zO` is open recursively).
 | ---      | ---                          |
 | `gf`     | Go to file in cursor         |
 
-### Counters
+#### Counters
 
 | Shortcut | Description      |
 | ---      | ---              |
 | `<C-A>`  | Increment number |
 | `<C-X>`  | Decrement        |
 
-### Windows
+#### Windows
 
 | `z{height}<Cr>` | Resize pane to `{height}` lines tall |
 
-### Tags
+#### Tags
 
 | Shortcut              | Description                                     |
 | ---                   | ---                                             |
@@ -319,7 +309,7 @@ Uppercase ones are recursive (eg, `zO` is open recursively).
 | `:tselect Classname`  | Find definitions of Classname                   |
 | `:tjump Classname`    | Find definitions of Classname (auto-select 1st) |
 
-### Case
+#### Case
 
 | Shortcut | Description                          |
 | ---      | ---                                  |
@@ -332,7 +322,7 @@ Uppercase ones are recursive (eg, `zO` is open recursively).
 
 Do these in visual or normal mode.
 
-### Marks
+#### Marks
 
 | Shortcut           | Description                                          |
 | ---                | ---                                                  |
@@ -360,7 +350,7 @@ Do these in visual or normal mode.
 | `:delm a-d`        | Delete marks `a`, `b`, `c`, `d`                      |
 | `:delm abc`        | Delete marks `a`, `b`, `c`                           |
 
-### Misc
+#### Misc
 
 | Shortcut   | Description                                       |
 | ---        | ---                                               |
@@ -369,7 +359,7 @@ Do these in visual or normal mode.
 | ---        | ---                                               |
 | `:set ff=unix` | Convert Windows line endings to Unix line endings |
 
-### Command line
+#### Command line
 
 | Shortcut     | Description                               |
 | ---          | ---                                       |
@@ -377,7 +367,7 @@ Do these in visual or normal mode.
 | `<C-R>"`     | Paste from " register                     |
 | `<C-X><C-F>` | Auto-completion of path in insert mode    |
 
-### Text alignment
+#### Text alignment
 
     :center [width]
     :right [width]
@@ -385,7 +375,7 @@ Do these in visual or normal mode.
 
 See `:help formatting`
 
-### Calculator
+#### Calculator
 
 | Shortcut      | Description                               |
 | ---           | ---                                       |
@@ -393,7 +383,7 @@ See `:help formatting`
 
 Do this in insert mode.
 
-### Exiting with an error
+#### Exiting with an error
 
     :cq
     :cquit
@@ -401,7 +391,7 @@ Do this in insert mode.
 Works like `:qa`, but throws an error. Great for aborting Git commands.
 
 
-### Spell checking
+#### Spell checking
 
 | Shortcut                     | Description                                             |
 | ---                          | ---                                                     |
@@ -415,8 +405,7 @@ Works like `:qa`, but throws an error. Great for aborting Git commands.
 
 See `:help spell`
 
-Also see
---------
+### Also see
 
 - [Vim cheatsheet](https://vim.rtorr.com/) _(vim.rotrr.com)_
 - [Vim documentation](http://vimdoc.sourceforge.net/htmldoc/) _(vimdoc.sourceforge.net)_

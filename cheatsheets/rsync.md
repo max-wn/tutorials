@@ -1,9 +1,4 @@
----
-title: Rsync
-category: CLI
-layout:
-weight:
----
+## rsync cheatsheet
 
 ### Basic example
 

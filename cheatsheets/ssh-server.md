@@ -1,11 +1,6 @@
----
-title: SSH
-category: cli
-tags:
-updated:
----
+## ssh cheatsheet
 
-## ssh how to disable password and allow only key authentication
+### ssh how to disable password and allow only key authentication
 
 Key authentication is more secure over password authentication. Just because
 users might have weak passwords, an attacker can easily brute force them. On

@@ -1,11 +1,6 @@
----
-title: SSH
-category: cli
-tags:
-updated:
----
+## ssh cheatsheet
 
-## Basis
+### Basis
 
 Generate ssh keys used for authentication, password-less logins, and other things.
 
@@ -54,7 +49,7 @@ and on remote `sudo apt install openssh-server`
 
 on Archlinux you install on local and remote `sudo pacman -S openssh`
 
-## Github SSH workflow
+### Github SSH workflow
 
 Generate key
 

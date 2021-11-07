@@ -1,9 +1,6 @@
----
-title: nmcli
-category: linux
-layout:
-updated:
----
+## nmcli cheatsheet
+
+### basis
 
 ```bash
 nmcli device wifi list

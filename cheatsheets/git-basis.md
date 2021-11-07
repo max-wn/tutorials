@@ -1,11 +1,6 @@
----
-title: Git basis
-category: Git
-tags:
-updated:
----
+## git cheatsheet
 
-## git configuration
+### git configuration
 
 ```bash
 git config --global user.name "name"    # add user name
@@ -13,15 +8,15 @@ git config --global user.email "email"  # add user e-mail
 git config -l                           #  check config
 ```
 
-## linux config file:
+### linux config file:
 
 `/home/myuser/.gitconfig`
 
-## windows config file:
+### windows config file:
 
 `C:\Users\myuser\.gitconfig`
 
-## basic
+### basic
 
 ```bash
 git init .                         # generation data base git in dir
@@ -31,7 +26,7 @@ git commit -m "my initial commit"  # initial commit
 git remote -v                      # see projects
 ```
 
-## file operations
+### file operations
 
 ```bash
 git rm --cached [file_name]  # удалить файл из репозитория гит
@@ -41,7 +36,7 @@ touch .gitignore             # игнорировать --> туда вписа�
 git checkout -- file.txt     # откатывает назад изменения в файле
 ```
 
-## clone, push, pull
+### clone, push, pull
 
 ```bash
 git clone 'link in project'               # downloud in copmuter
@@ -50,7 +45,7 @@ git push --set-upstream origin fix_error  # push and generation branch in github
 git push origin --delete fix_error        # delete global branch
 ```
 
-## ssh
+### ssh
 
 ```bash
 ssh-keygen                          # key generation
@@ -58,7 +53,7 @@ git remote -v                       # cheking the link
 git remote set-url origin link SSH  # remove link
 ```
 
-## commit and reset
+### commit and reset
 
 ```bash
 git checkout [hash]      # return to a diferent hash
@@ -68,7 +63,7 @@ git reset --soft HEAD~2  # delete all commit log 2 commits back
 git reset [file]         # remove from the done position
 ```
 
-## 5 tips, for public and private projects / repositories (repos)
+### 5 tips, for public and private projects / repositories (repos)
 
 1. Pull Request review (PR) code suggestion
 2. Repository project board (like Trello / Jira but better)

@@ -1,17 +1,12 @@
----
-title: Git tricks
-category: Git
-tags:
-updated:
----
+## git cheatsheet - git tricks
 
-## Refs
+### Refs
 
     HEAD^       # 1 commit before head
     HEAD^^      # 2 commits before head
     HEAD~5      # 5 commits before head
 
-## Branches
+### Branches
 
     # create a new branch
       git checkout -b $branchname
@@ -33,7 +28,7 @@ updated:
     # go back to previous branch
       git checkout -
 
-## Collaboration
+### Collaboration
 
     # Rebase your changes on top of the remote master
       git pull --rebase upstream master
@@ -55,22 +50,20 @@ Submodules
     # (Use when you changed remotes in submodules)
       git submodule sync
 
-Diff
-----
+### Diff
 
-### Diff with stats
+#### Diff with stats
 
     git diff --stat
     app/a.txt    | 2 +-
     app/b.txt    | 8 ++----
     2 files changed, 10 insertions(+), 84 deletions(-)
 
-### Just filenames
+#### Just filenames
 
     git diff --summary
 
-Log options
------------
+### Log options
 
     --oneline
       e11e9f9 Commit message here
@@ -83,9 +76,6 @@ Log options
 
     --date=relative
       "2 hours ago"
-
-Misc
-----
 
 ### Cherry pick
 
@@ -102,7 +92,7 @@ Misc
     # Go back up to root directory
       cd "$(git rev-parse --show-top-level)"
 
-## Short log
+### Short log
 
      $ git shortlog
      $ git shortlog HEAD~20..    # last 20 commits
@@ -115,14 +105,14 @@ Misc
          Another commit
          This other commit
 
-## Bisect
+### Bisect
 
     git bisect start HEAD HEAD~6
     git bisect run npm test
     git checkout refs/bisect/bad   # this is where it screwed up
     git bisect reset
 
-### Manual bisection
+#### Manual bisection
 
     git bisect start
     git bisect good   # current version is good
@@ -133,13 +123,13 @@ Misc
 
     git bisect reset  # abort
 
-## Searching
+### Searching
 
     git log --grep="fixes things"  # search in commit messages
     git log -S"window.alert"       # search in code
     git log -G"foo.*"              # search in code (regex)
 
-## GPG Signing
+### GPG Signing
 
     git config set user.signingkey <GPG KEY ID>       # Sets GPG key to use for signing
 
