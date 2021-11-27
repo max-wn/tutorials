@@ -454,7 +454,7 @@ sudo pacman -Rs xf86-video-intel
 Ceck if you have mesa (if not, install it)
 
 ```bash
-sudo pacman -Qs mesa
+sudo pacman -Qs mesa mesa-demos
 ```
 
 Install nvidia packages
