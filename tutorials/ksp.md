@@ -42,17 +42,16 @@ Next try these mods:
 ## see also links
 1. [all mods](https://wiki.kerbalspaceprogram.com/wiki/List_of_mods)
 2. [mechjeb manual](https://github.com/MuMech/MechJeb2/wiki)
-2. pass  # TODO
 
 ---
 
 THE END
 
 
-[001](https://www.youtube.com/playlist?list=PLI88YcId4RNkb9pnOUtaup1Kf7ElhIGp2 "my favorite KSP guide")
-[002](https://wiki.kerbalspaceprogram.com/wiki/Cheat_Sheet "delta v map")
-[003](https://wiki.kerbalspaceprogram.com/wiki/Key_bindings "key bindings")
-[004](https://github.com/KSP-CKAN/CKAN "CKAN")
-[005](https://wiki.kerbalspaceprogram.com/wiki/Main_Page "ksp wiki")
-[006](https://www.mono-project.com/ "mono")
-[007](https://github.com/KSP-CKAN/CKAN/wiki/User-guide "CKAN user guide")
+[001]: https://www.youtube.com/playlist?list=PLI88YcId4RNkb9pnOUtaup1Kf7ElhIGp2 "my favorite KSP guide"
+[002]: https://wiki.kerbalspaceprogram.com/wiki/Cheat_Sheet "delta v map"
+[003]: https://wiki.kerbalspaceprogram.com/wiki/Key_bindings "key bindings"
+[004]: https://github.com/KSP-CKAN/CKAN "CKAN"
+[005]: https://wiki.kerbalspaceprogram.com/wiki/Main_Page "ksp wiki"
+[006]: https://www.mono-project.com/ "mono"
+[007]: https://github.com/KSP-CKAN/CKAN/wiki/User-guide "CKAN user guide"
