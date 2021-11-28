@@ -9,11 +9,11 @@ You should defenetly study this [video guide][001] and use these resources:
 
 First you should install:
 * [mono][006]
- - [macOS](https://formulae.brew.sh/formula/mono#default)
- - [archlinux](https://wiki.archlinux.org/title/Mono)
+    - [macOS](https://formulae.brew.sh/formula/mono#default)
+    - [archlinux](https://wiki.archlinux.org/title/Mono)
 * [ckan][004]
- - [macOS](https://formulae.brew.sh/cask/ckan#default)
- - [archlinux](https://github.com/KSP-CKAN/CKAN/releases)
+    - [macOS](https://formulae.brew.sh/cask/ckan#default)
+    - [archlinux](https://github.com/KSP-CKAN/CKAN/releases)
 
 See also [ckan user guide][007].
 
@@ -38,6 +38,12 @@ Next try these mods:
 16. [KAC](https://triggerau.github.io/KerbalAlarmClock/)
 17. [Kerbal Smart Parts](https://github.com/linuxgurugamer/KerbalSmartParts)
 18. [KWRR](https://github.com/linuxgurugamer/KWRocketryRedux)
+19. [Infernal Robotics](https://forum.kerbalspaceprogram.com/index.php?/topic/184787-infernal-robotics-next/)
+20. [Ship manifest](https://github.com/PapaJoesSoup/ShipManifest)
+21. [Universal Storage](https://forum.kerbalspaceprogram.com/index.php?/topic/177385-universal-storage-ii-131-and-145-170/)
+22. [KOS](https://github.com/KSP-KOS/KOS)
+23. [MKS](https://github.com/BobPalmer/MKS)
+24. [ConnectedLivingSpace](https://github.com/codepoetpbowden/ConnectedLivingSpace)
 
 ## see also links
 1. [all mods](https://wiki.kerbalspaceprogram.com/wiki/List_of_mods)
