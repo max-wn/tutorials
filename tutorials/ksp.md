@@ -44,6 +44,7 @@ Next try these mods:
 22. [KOS](https://github.com/KSP-KOS/KOS)
 23. [MKS](https://github.com/BobPalmer/MKS)
 24. [ConnectedLivingSpace](https://github.com/codepoetpbowden/ConnectedLivingSpace)
+25. [KER](https://github.com/jrbudda/KerbalEngineer)
 
 ## see also links
 1. [all mods](https://wiki.kerbalspaceprogram.com/wiki/List_of_mods)
