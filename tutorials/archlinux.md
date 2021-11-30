@@ -781,6 +781,17 @@ sudo pacman -Rns $(pacman -Qtdq)
 
 ### УСТАНОВКА РУССКОГО ЯЗЫКА
 
+#### var 1
+
+Например, можно установить английскую и русскую раскладки, которые будут
+переключаться по `ctrl+shift`:
+
+```bash
+localectl --no-convert set-x11-keymap us,ru "" "" grp:ctrl_shift_toggle
+```
+restart xinit
+
+#### var 2
 (RALT --> ENG, Shift + RALT --> RUS)
 
 Check keyboard settigs on the your computer:
