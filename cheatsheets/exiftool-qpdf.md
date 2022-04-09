@@ -16,5 +16,5 @@ command `qpdf --linearize in.pdf out.pdf`)
 
 THE END
 
-[001](https://github.com/qpdf/qpdf "Content-preserving PDF transformation system")
-[002](https://exiftool.org/TagNames/PDF.html)
+[001]: https://github.com/qpdf/qpdf "Content-preserving PDF transformation system")
+[002]: https://exiftool.org/TagNames/PDF.html "exiftool and qpdf"

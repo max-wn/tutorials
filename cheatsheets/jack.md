@@ -49,4 +49,5 @@ ps -ef | grep jack
 
 THE END
 
-[001](https://elatov.github.io/2018/03/creating-a-launchd-plist-for-jackd/)
+[001]: https://elatov.github.io/2018/03/creating-a-launchd-plist-for-jackd/
+"jack instructions"
