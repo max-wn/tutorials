@@ -44,10 +44,7 @@
 3. Звуковой пакет `@'s soundpack` скачай из [Sounds][004] архив
    `@.s.soundpack.rar` в каталог `\cdda\data\sound` распакуй
 
-4. Музыкальный пакет `CO AG MusicPack Redux` скачай из [Music][006] файл
-   `\cdda\data\sound\@'s soundpack\music\musicset.json` удали содержимое
-   `CO.AG_MusicPack_Redux.zip\CONTENTS\` в каталог `\cdda\data\sound\@'s
-   soundpack\music` распакуй
+4. Музыкальный пакет `CDDA-Soundpack` скачай из [Music][006]
 
 5. Набор тайлов `UndeadPeopleTileset` скачай из [Tilesets][005] содержимое
    `UndeadPeopleTileset-master.zip\UndeadPeopleTileset-master\TILESETS\` в
@@ -104,7 +101,8 @@ THE END
 stable relese"
 [003]: https://github.com/CleverRaven/Cataclysm-DDA/releases "download
 experimental relese"
-[004]: https://github.com/damalsk/damalsksoundpack/releases "diwnload sounds"
-[005]: https://github.com/SomeDeadGuy/UndeadPeopleTileset "diwnload tilesets"
-[006]: https://drive.google.com/file/d/1rMVuPEr8PCewMwElzOAFh9m-uq7VLq1G/view "download music"
+[004]: https://github.com/damalsk/damalsksoundpack/releases "download sounds"
+[005]: https://github.com/Theawesomeboophis/UndeadPeopleTileset "download
+tilesets"
+[006]: https://github.com/budg3/CDDA-Soundpack "download music"
 
