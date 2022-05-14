@@ -579,7 +579,7 @@ packages description:
 sudo pacman -S figlet mutt udisks2 pycharm-community-edition moc
 htop calcurse sxiv zathura zathura-pdf-mupdf zathura-djvu
 pacman-contrib github-cli newsboat perl-image-exiftool calibre ffmpeg krita
-gimp pandoc texlive-most texlive-lang biber lynx
+gimp pandoc texlive-most texlive-lang biber lynx urlscan
 ```
 
 packages description:
@@ -608,6 +608,7 @@ packages description:
 * texlive-lang              --> group contains packages providing character sets and features for languages with non-latin characters
 * biber                     --> A Unicode-capable BibTeX replacement for biblatex users
 * lynx                      --> A text browser for the World Wide Web
+* urlscan                   --> Mutt and terminal url selector
 
 ### Turn off PC:
 

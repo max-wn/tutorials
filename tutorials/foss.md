@@ -1,30 +1,27 @@
-## free open source software I use
+## FREE OPEN SOURCE SOFTWARE I USE
 
 ### Operating System/Distribution
 * ARCHLINUX
 
-### terminal
+### Terminal
 * ALACRITTY
 
-### shell
+### Shell
 * BASH
 
-###Window Manager/Desktop Environment
+### Window Manager/Desktop Environment
 * QTILE
 
 ### Text editing and programming
 * VIM
 
-### web browser
-* FIREFOX
-
-### web browsers (alternative for FIREFOX)
-* BRAVE
-* QUTEBROWSER
-* PALE MOON
-* WATERFOX
-* GNU ICECAT
-* GNU EMACS
+### Web browsers
+* [FIREFOX](https://wiki.archlinux.org/title/Firefox) - main browser
+* [BRAVE](https://brave.com/) - alternative brawser
+* [LYNX](https://archlinux.org/packages/extra/x86_64/lynx/) - A text browser
+  for the World Wide Web
+* [URLSCAN](https://github.com/firecat53/urlscan) - Mutt and terminal url
+  selector
 
 ### Image modification
 * [KRITA](https://krita.org) — это виртуальный холст, и без планшета там будет
@@ -59,7 +56,7 @@
 * MPV
 
 ### RSS reader
-* NEWSBOAT
+* [NEWSBOAT](https://newsboat.org/)
 
 ### Video and Audio
 * BLENDER
