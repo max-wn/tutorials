@@ -87,8 +87,12 @@
   automation (EDA) that facilitates the design of schematics for electronic
   circuits and their conversion to PCB (printed circuit board).
 
+### Excel-like spreadsheets
+* [sc-im](https://github.com/andmarti1424/sc-im) - vim-like spreadsheet
+  calculator
+
 ### see also
-* [Luke Smith](https://lukesmith.xyz/c/programs-and-equipment-i-use)
+* [Luke Smith](https://lukesmith.xyz/programs/)
 
 ---
 

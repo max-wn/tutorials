@@ -12,7 +12,12 @@ pass git push -u --all
 ### Store
 
 ```bash
+# Save a new password and additional information (-m --> multiline) (press
+# Ctrl + D on a new line to complete):
 pass insert [-m] fsf.org/rsc
+
+# Generate a new random password with a given length, and copy it to the
+# clipboard (-n --> no symbols):
 pass generate [-n] fsf.org/rsc length
 ```
 
